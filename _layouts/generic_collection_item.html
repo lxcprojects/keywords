@@ -62,5 +62,10 @@ layout: default
         {% include item_metadata.html meta=metadata %}
       {% endif %}
     </div>
+
+    <div class="row">
+      {% capture excerpt %}{% include excerpts/{{ page.pid }}.md %}{% endcapture %}
+      {{ excerpt | markdownify }}
+    </div>
   </div>
 </div>
