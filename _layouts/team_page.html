@@ -7,14 +7,14 @@ layout: page
     {{ content }}
   </div>
 
-  <div class="row">
+  <div class="row my-4">
     {% for person in site.team %}
       <div class="row">
         <h3 class="row">{{ person.name }}</h3>
         <div class="row">
           <div class="col-sm-4">
             {% if person.image %}
-              <img src='{{ person.image | absolute_url}}' alt='Image of {{ person.name }}' />
+              <img class="w-100" src='{{ person.image | absolute_url}}' alt='Image of {{ person.name }}' />
             {% endif %}
           </div>
           <div class="col-sm">
