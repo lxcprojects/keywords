@@ -36,6 +36,8 @@ collections:
       source: "keywords.csv" # path to the metadata file within `_data`
     images:
       source: "raw_images/keywords" # path to the directory of images within `_data`
+  # Team collection used to enumerate project team members in '_team' folder
+  team:
 
 # --------------------------------------------------------------
 # SEARCH INDEX SETTINGS
