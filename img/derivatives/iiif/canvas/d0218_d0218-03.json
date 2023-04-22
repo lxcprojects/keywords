@@ -1,0 +1,32 @@
+---
+layout: none
+---
+{
+  "@type": "sc:Canvas",
+  "@id": "{{ '/' | absolute_url }}img/derivatives/iiif/canvas/d0218_d0218-03.json",
+  "label": "Page 2",
+  "width": 2280,
+  "height": 3516,
+  "thumbnail": "{{ '/' | absolute_url }}img/derivatives/iiif/images/d0218_d0218-03/full/250,/0/default.jpg",
+  "images": [
+    {
+      "@type": "oa:Annotation",
+      "@id": "{{ '/' | absolute_url }}img/derivatives/iiif/annotation/d0218_d0218-03.json",
+      "motivation": "sc:painting",
+      "resource": {
+        "@id": "{{ '/' | absolute_url }}img/derivatives/iiif/images/d0218_d0218-03/full/full/0/default.jpg",
+        "@type": "dcterms:Image",
+        "format": "image/jpeg",
+        "service": {
+          "@context": "http://iiif.io/api/image/2/context.json",
+          "@id": "{{ '/' | absolute_url }}img/derivatives/iiif/images/d0218_d0218-03",
+          "profile": "http://iiif.io/api/image/2/level0.json"
+        },
+        "width": 1140,
+        "height": 1758
+      },
+      "on": "{{ '/' | absolute_url }}img/derivatives/iiif/canvas/d0218_d0218-03.json"
+    }
+  ],
+  "@context": "http://iiif.io/api/presentation/2/context.json"
+}

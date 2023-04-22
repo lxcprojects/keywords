@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: team_page
 title: Our Team
 permalink: /team/
 ---
@@ -31,4 +31,3 @@ is digital strategist on the Keywords for Black Louisiana project, digital disse
 
 
 ![life x code logo](../assets/figures/poultry+vendor.png){: width="300px"}
-

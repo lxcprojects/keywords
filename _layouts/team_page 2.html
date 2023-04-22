@@ -1,0 +1,27 @@
+---
+layout: page
+---
+
+<div class="container">
+  <div class="row">
+    {{ content }}
+  </div>
+
+  <div class="row my-4">
+    {% for person in site.team %}
+      <h3 class="row w-100">{{ person.name }}</h3>
+      <div class="row w-100">
+        <div class="col-sm-4">
+          {% if person.image %}
+            <img class="w-100" src='{{ person.image | absolute_url}}' alt='Image of {{ person.name }}' />
+          {% endif %}
+        </div>
+        <div class="col-sm">
+          {{ person.content }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+</div>
+

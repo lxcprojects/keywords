@@ -10,3 +10,14 @@ facet_by='filing_date|doc_origin*|language*|archive*|names_black*|names_white*|n
 
   </div>
 </div>
+
+
+
+
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "{{ '/' | absolute_url }}img/derivatives/iiif/images/d0010_d0010-01",
+                  "profile": "http://iiif.io/api/image/2/level0.json"
+                },
+                "width": 1140,
+                "height": 1763
