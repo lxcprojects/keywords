@@ -38,6 +38,7 @@ collections:
       source: "raw_images/keywords" # path to the directory of images within `_data`
   # Team collection used to enumerate project team members in '_team' folder
   team:
+    output: false
 
 # --------------------------------------------------------------
 # SEARCH INDEX SETTINGS
