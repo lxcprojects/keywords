@@ -13,7 +13,7 @@ value:
   
   <div class="row">
     <ul class="w-100">
-      {% assign date = site.keywords[page.filing_date] | where_exp: "page", "page.url contains 'pages/docs_by/keywords/'" %}
+      {% assign date = site.keywords[page.lhc_filing_date] | where_exp: "page", "page.url contains 'pages/docs_by/keywords/'" %}
       {% for page in keywords %}
         <li class="">
           {% comment %}

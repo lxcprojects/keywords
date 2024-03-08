@@ -4,21 +4,27 @@ image_viewer: 'openseadragon'
 pagination: true
 meta:
   - label: 'Date'
-    value: page.filing_date
+    value: page.lhc_filing_date
   - label: 'Origin'
-    value: page.doc_origin
+    value: page.lhc_doc_origin
   - label: 'Language'
     value: page.language
   - label: 'Archive'
-    value: page.archive
+    value: page.lhc_archive
+  - label: 'Source'
+    value: page.lhc_source
+  - label: 'Document Type'
+    value: page.lhc_doc_type
+  - label: transcriber
+    value: page.transcriber
+  - label: translator
+    value: page.translator
   - label: 'Keywords'
     value: page.keywords
   - label: LHC Scans
     value: page.lhc_scans
     type: link
-  - label: 'Transcription and Translation'
-    value: page.google_doc_prototype
-    type: link
-  - label: 'Downloadable File'
+  - label: Downloadable PDF
+    value: page.pdf_location
     type: link
 ---

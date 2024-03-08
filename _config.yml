@@ -57,17 +57,23 @@ search:
         fields: # the metadata fields to index
           - pid
           - label
-          - filing_date
-          - full_index
-          - doc_origin
+          - lhc_filing_date
+          - lhc_full_index
+          - lhc_doc_origin
           - language
-          - archive
-          - governing_body
+          - lhc_archive
+          - lhc_source
           - names_black
           - names_white
           - names_native
-          - doc_type
+          - lhc_doc_type
+          - related_docs
+          - related_record_ids
           - keywords
+          - lhc_scans
+          - transcriber
+          - translater
+          - pdf_location
 
 
 
