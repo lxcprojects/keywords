@@ -1,6 +1,9 @@
 title: Kinship and Belonging
 subtitle: Keywords for Black Louisiana
 authors:
+  John:
+    name: John Abrahams
+    github: jabrah
   Chenise:
     name: Chenise Calhoun
     github: chenisecal429
@@ -8,7 +11,7 @@ authors:
     name: Jamya Davis
     github: jdcherelle
   Ellie:
-    name: Ellie Palazzolo
+    name: E. G. Palazzolo
     github: egpalazzolo
 description: 'Kinship and Longing: Keywords for Black Louisiana brings to light evidence of Black life and Black history through annotated transcriptions and translations of French and Spanish colonial documents from 18th century Louisiana'
 baseurl: "/keywords"
@@ -57,23 +60,32 @@ search:
         fields: # the metadata fields to index
           - pid
           - label
+          - blkbook_title
           - lhc_filing_date
           - lhc_full_index
           - lhc_doc_origin
           - language
           - lhc_archive
           - lhc_source
+          - lhc_lhq
+          - lhc_lhq_citation
           - names_black
           - names_white
           - names_native
           - lhc_doc_type
-          - related_docs
+          - abstract
           - related_record_ids
-          - keywords
           - lhc_scans
+          - keyword_glossary
           - transcriber
-          - translater
+          - translator
+          - people_ref_ids
+          - documents_from_ps
+          - names_from_ps
+          - record_id_from_ps
+          - editorial_copy
           - pdf_location
+
 
 
 
@@ -106,4 +118,3 @@ menu:
     link: "/search/"
   - label: "Contact Us"
     link: "/contact/"
-
