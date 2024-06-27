@@ -297,5 +297,6 @@ layout: none
       ]
     }
   ],
-  "full": "{{ '/' | absolute_url }}img/derivatives/iiif/images/d0035_d0035-01/full/full/0/default.jpg"
+  "full": "{{ '/' | absolute_url }}img/derivatives/iiif/images/d0035_d0035-01/full/full/0/default.jpg",
+  "fullwidth": "{{ '/' | absolute_url }}img/derivatives/iiif/images/d0035_d0035-01/full/1140,/0/default.jpg"
 }
