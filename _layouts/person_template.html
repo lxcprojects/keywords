@@ -1,0 +1,54 @@
+---
+layout: default
+meta:
+    - label: 'Age'
+      value: page.age
+    - label: 'Mentioned in'
+      value: page.document_id
+      type: internal_link
+      collection: keywords
+      property: 'pid'
+    - label: 'Status'
+      value: page.status
+    - label: 'Biographical Notes'
+      value: page.biographical_notes
+    - label: 'Racial Description'
+      value: page.racial_description
+    - label: 'Ethnic Description'
+      value: page.ethnic_description
+    - label: Nation
+      value: page.nation
+    - label: 'Also mentioned in'
+      value: page.other_documents_present
+      type: internal_link
+      collection: keywords
+      property: 'pid'
+    - label: 'Related to'
+      value: page.related_people_ids
+      type: internal_link
+      collection: people-uniq
+      property: 'pid'
+      delimiter: ;
+    - label: 'Appears in stories'
+      value: page.stories
+---
+
+<div class="row card">
+    <div class="card-body item-metadata w-100">
+        <h1>{{ page.name }}</h1>
+        <h2>{{ page.name_2 }}</h2>
+        
+        <p>{{ page.biographical_notes | markdownify }}</p>
+        
+        <div class="row">
+            {% if layout.meta.size %}
+                {% assign metadata = layout.meta %}
+            {% elsif page.meta.size %}
+                {% assign metadata = page.meta %}
+            {% endif %}
+            {% if metadata.size %}
+                {% include keywords_metadata.html meta=metadata %}
+            {% endif %}
+        </div>
+    </div>
+</div>

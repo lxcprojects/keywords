@@ -1,0 +1,26 @@
+{% comment %}
+    Template for linking metadata to the appropriate page in the site
+    Properties:
+        * collection: expected collection that page will connect to
+        * property: property to search within the collection to match against
+        * value: metadata value
+{% endcomment %}
+
+{% if include.collection and include.property %}
+    {{ include | inspect }}
+
+    {% assign delimiter = "|" %}
+    {% if include.delimiter %}
+        {% assign delimiter = include.delimiter %}
+    {% endif %}
+    
+    {% assign keywords = include.value | strip | split: delimiter %}
+    {%- for keyword in keywords -%}
+        {% assign kw = keyword | strip %}
+        {% assign site_data = site[include.collection].pages | where: property, kw | first %}
+
+        <a href="{{ site_data.url }}" class="badge badge-pill badge-info mr-1">
+            {{ kw }}
+        </a>
+    {%- endfor -%}
+{% endif %}
