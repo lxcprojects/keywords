@@ -10,8 +10,6 @@ meta:
       property: 'pid'
     - label: 'Status'
       value: page.status
-    - label: 'Biographical Notes'
-      value: page.biographical_notes
     - label: 'Racial Description'
       value: page.racial_description
     - label: 'Ethnic Description'
@@ -26,8 +24,8 @@ meta:
     - label: 'Related to'
       value: page.related_people_ids
       type: internal_link
-      collection: people-uniq
-      property: 'pid'
+      collection: people-uniq-rows
+      property: pid
       delimiter: ;
     - label: 'Appears in stories'
       value: page.stories

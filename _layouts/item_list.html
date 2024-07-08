@@ -1,0 +1,27 @@
+---
+layout: default
+collection:
+properties:
+---
+
+{{ content }}
+
+{% assign props = page.properties | first %}
+
+<div class="list-group">
+    {%- for item in site[page.collection] -%}
+        <div class="list-group-item list-group-item-action my-4">
+            <a href="{{ item.url | relative_url }}" class="text-dark p-4">
+                <h3 class="">{{ item[props.label] }}</h3>
+                <p class="mb-1">{{ item[props.description] }}</p>
+                <small>{{ item[props.footnote] }}</small>
+            </a>
+        </div>
+    {%- endfor -%}
+</div>
+
+{% comment %}
+{% for item in site[page.collection] %}
+* [{{ item.label }}]({{ item.url | relative_url }}) ({{ item.pid }})
+{% endfor %}
+{% endcomment %}

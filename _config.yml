@@ -37,7 +37,7 @@ collections:
       source: "raw_images/keywords" # path to the directory of images within `_data`
   ### People set, each row has separate PID
   ### This may create more than one page per Person, if they appear in separate rows
-  people-uniq:
+  people-uniq-rows:
     output: true
     layout: person_template
     metadata:
@@ -48,7 +48,7 @@ collections:
     output: true
     layout: person_template_2
     metadata:
-      source: people-separate-pids.csv
+      source: people-separate-rows.csv
   # Team collection used to enumerate project team members in '_team' folder
   team:
     output: false

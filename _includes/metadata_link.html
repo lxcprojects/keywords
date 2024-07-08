@@ -6,21 +6,28 @@
         * value: metadata value
 {% endcomment %}
 
-{% if include.collection and include.property %}
-    {{ include | inspect }}
+{% assign delimiter = "|" %}
+{% if include.delimiter %}
+    {% assign delimiter = include.delimiter %}
+{% endif %}
 
-    {% assign delimiter = "|" %}
-    {% if include.delimiter %}
-        {% assign delimiter = include.delimiter %}
-    {% endif %}
-    
+{% if include.collection and include.property %}
     {% assign keywords = include.value | strip | split: delimiter %}
     {%- for keyword in keywords -%}
         {% assign kw = keyword | strip %}
-        {% assign site_data = site[include.collection].pages | where: property, kw | first %}
+        {% assign site_data = site[include.collection] | where: include.property, kw | first %}
 
-        <a href="{{ site_data.url }}" class="badge badge-pill badge-info mr-1">
-            {{ kw }}
-        </a>
+        {% assign label = site_data.label %}
+        {% if label == null or label == "" %}
+            {% assign label = kw %}
+        {% endif %}
+
+        {% if site_data.url %}
+            <a href="{{ site_data.url }}" class="badge badge-pill badge-info mr-1">
+                {{ label }}
+            </a>
+        {% else %}
+            <span class="badge badge-pill badge-secondary mr-1">{{ label }}</span>
+        {% endif %}
     {%- endfor -%}
 {% endif %}
