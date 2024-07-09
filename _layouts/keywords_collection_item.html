@@ -69,8 +69,12 @@ layout: default
     </div>
 
     <div>
-      {% capture excerpt %}{% include excerpts/{{ page.pid }}.md %}{% endcapture %}
-      {{ excerpt | markdownify }}
+      {% assign excerpt = site.documents | where: 'collection', page.collection | where_exp: 'doc', "doc.path contains '/excerpts/'" | where: 'basename', page.pid | first %}
+      {% if excerpt %}
+        {% capture excerpt_file %}excerpts/{{ page.pid }}.md{% endcapture %}
+        {% capture data %}{% include_relative {{ excerpt_file }} %}{% endcapture %}
+        {{ data | markdownify }}  
+      {% endif %}
     </div>
   </div>
 </div>
