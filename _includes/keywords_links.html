@@ -1,15 +1,31 @@
 {% comment %}
     Template for linking keywords on the document page to the correct keywords "search" page
+    Parameters:
+        - values : (Required) comma separated list of values that should link
+        - target_field : (Required) which field in the target collection to match value against
+        - collection : (Optional) collection name that should be linked. Use name from _config.yml
+                        Defaults to the current page's collection
+        - delimiter : delimiter between values in `values`. Default: "|"
 {% endcomment %}
 
-{% assign keywords = include.keywords | strip | split: "|" %}
+{% assign collection = include.collection %}
+{% unless collection %}
+    {% assign collection = page.collection %}
+{% endunless %}
 
-{%- for keyword in keywords | split: "|" -%}
-    {% assign kw = keyword | strip %}
-    {% assign site_data = site["keywords_descriptions"] | where: "Keyword", kw | first %}
-    
-    <a href="{{ site_data.url }}" class="badge badge-pill badge-info mr-1">
-        {{ kw }}
-    </a>
-{%- endfor -%}
+{% assign delimiter = include.delimiter %}
+{% unless delimiter %}
+    {% assign delimiter = "|" %}
+{% endunless %}
 
+{% assign values = include.values | strip | split: delimiter %}
+
+{% if include.target_field %}
+    {%- for value in values -%}
+        {% assign key = value | strip %}
+        {% assign site_data = site[include.collection] | where: include.target_field, key | first %}
+        <a href="{{ site_data.url }}" class="badge badge-pill badge-info mr-1">
+            <div>{{ key }}</div>
+        </a>
+    {%- endfor -%}
+{% endif %}

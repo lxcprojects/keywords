@@ -21,9 +21,14 @@
             </a>
           {%- endcapture -%}
         {% endif %}
-      {% elsif key == 'keywords' %}
+      {% elsif item.type == 'internal-link' %}
         {%- capture value -%}
-          {% include keywords_links.html keywords=value %}
+          {% include keywords_links.html
+              values=value
+              target_field=item.targetField
+              collection=item.collection
+              delimiter=item.delimiter
+          %}
         {%- endcapture -%}
       {% endif %}
       <dt>{{ item.label }}</dt>
