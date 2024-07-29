@@ -145,9 +145,20 @@
                 <div class="card-body">
                   <h3 class="card-title">{{ item.label }}</h3>
 
-                  <p class="card-text small">
-                    {{ item.governing_body }}, {{ item.doc_origin }} ({{ item.filing_date }})
-                  </p>
+                  {% if include.display_fields %}
+                    {% assign display_fields = include.display_fields | split: "," %}
+                    {% for df in display_fields %}
+                      {% if item[df] %}
+                        <div class="card-text small">
+                          {{ item[df] }}
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                  {% else %}
+                    <div class="card-text small">
+                      {{ item.lhc_source }}, {{ item.lhc_doc_origin }} ({{ item.lhc_filing_date }})
+                    </div>
+                  {% endif %}
                 </div>
               </div>
             </a>
