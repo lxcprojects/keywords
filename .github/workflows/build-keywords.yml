@@ -50,9 +50,9 @@ jobs:
         id: wax-tasks-kw
         shell: bash
         run: |
+          bundle exec rake wax:derivatives:iiif keywords
           bundle exec rake wax:pages keywords
           bundle exec rake wax:search main
-          bundle exec rake wax:derivatives:iiif keywords
       
       # Run Wax tasks for the 'Keywords descriptions' collection
       # Only needs pages generated for now
