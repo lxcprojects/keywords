@@ -44,6 +44,11 @@ collections:
     layout: "facet_page_layout"
     metadata:
       source: "keywords_descriptions.csv"
+  people:
+    output: true
+    layout: "person_description"
+    metadata:
+      source: "K4BL People Set.csv"
 
 # --------------------------------------------------------------
 # SEARCH INDEX SETTINGS

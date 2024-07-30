@@ -59,6 +59,10 @@ jobs:
       - name: 'Wax build: Keywords descriptions'
         shell: bash
         run: bundle exec rake wax:pages keywords_descriptions
+      
+      - name: 'Wax build: People'
+        shell: bash
+        run: bundle exec rake wax:pages people
 
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default

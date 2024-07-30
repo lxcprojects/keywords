@@ -1,0 +1,57 @@
+---
+layout: keywords_collection_item
+pagination: true
+meta:
+  - label: "Name 2"
+    value: page.name_2
+  - label: "Name 3"
+    value: page.name_3
+  - label: "Name 4"
+    value: page.name_4
+  - label: "Name 5"
+    value: page.name_5
+  - label: "Biographical Notes"
+    value: page.biographical_notes
+  - label: "Racial Descriptions"
+    value: page.racial_descriptions
+  - label: "Ethnic Descriptions"
+    value: page.ethnic_descriptions
+  - label: "Nation"
+    value: page.nation
+  - label: "Status"
+    value: page.status
+  - label: "Age Notes"
+    value: page.age_notes
+  - label: "Documents"
+    value: page.document_ids
+    type: internal-link
+    collection: keywords
+    targetField: pid
+    delimiter: ','
+  - label: "Also present in"
+    value: page.other_documents_present
+    type: internal-link
+    collection: keywords
+    targetField: pid
+    delimiter: ","
+  - label: "Related to"
+    value: page.related_people_ids
+    type: internal-link
+    collection: people
+    targetField: pid
+    delimiter: ","
+  - label: "Found in stories"
+    value: page.stories
+  - label: "Editor"
+    value: page.daem_editor
+  - label: "Comments"
+    value: page.daem_comments
+---
+
+<h1 class="item-label">{{ page.name }}</h1>
+
+{%- capture alternate_names -%}
+{{ page.name_2 }}, {{ page.name_3 }}, {{ page.name_4 }}, {{ page.name_5 }}
+{%- endcapture -%}
+{% assign page.alternate_names = alternate_names | split: "," | where_exp: "name", "name != nil and name != ' '" %}
+
