@@ -15,8 +15,10 @@ Generate the list of nav links to all of our Keywords
     {%- if pageName != currentPage-%}
       {%- assign activeClass = "" -%}
     {%- endif -%}
-    <li class="list-group-item {{ activeClass }} py-2">
-      <a href="{{ page.url | relative_url }}">{{ page.Keyword }}</a>
+    <li class="list-group-item {{ activeClass }} p-0">
+      <a href="{{ page.url | relative_url }}">
+        <div class="py-2 px-3">{{ page.Keyword }}</div>
+      </a>
     </li>
   {% endfor %}
 {%- endcapture -%}
@@ -45,7 +47,7 @@ Generate the list of nav links to all of our Keywords
         <span class="navbar-toggler-icon">&#9776;</span>
         <h2>{{ page.label }}</h2>
       </button>
-      <div id="side-nav-sm-collapse" class="collapse navbar-collapse">
+      <div id="side-nav-sm-collapse" class="collapse navbar-collapse border-left border-right">
         <ul class="list-group list-group-flush px-4 py-2">
           {{ navs }}
         </ul>

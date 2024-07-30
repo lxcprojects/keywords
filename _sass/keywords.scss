@@ -1,0 +1,38 @@
+main a {
+    color: $dark-background;
+
+    &:hover {
+        color: $dark-background;
+    }
+    &:visited {
+        color: $dark-background;
+    }
+}
+
+.banner {
+    .dropdown-item:hover {
+        color: $dark-background;
+        background-color: $light-link-hover;
+    }
+}
+
+.gallery-item-facets {
+    .card {
+        &:hover {
+            box-shadow: 0 0 5px;
+        }
+    }
+}
+
+#side-nav-sm {
+    .list-group-item-dark,
+    .list-group-item:hover {
+        background-color: $light-link-hover;
+    }
+}
+.facet-sidebar {
+    .list-group-item-dark,
+    .list-group-item:hover {
+        background-color: $light-link-hover;
+    }
+}

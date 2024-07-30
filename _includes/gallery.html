@@ -84,14 +84,16 @@
             <div class="card-body">
               {% for value in facet_values %}
               <div class="facet-item">
-                <input
-                  id="{{value | slugify}}"
-                  class="{{facet | slugify}}"
-                  type="checkbox"
-                  name="{{value}}"
-                  value="{{value}}"
-                />
-                <label for="{{value}}">{{value}}</label>
+                <label for="{{value}}">
+                  <input
+                    id="{{value | slugify}}"
+                    class="{{facet | slugify}}"
+                    type="checkbox"
+                    name="{{value}}"
+                    value="{{value}}"
+                  />
+                  {{value}}
+                </label>
               </div>
               {% endfor %}
             </div>
