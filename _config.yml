@@ -92,7 +92,9 @@ search:
 menu:
   - label: "About Us"
     sub:
-      - label: "Our Team"
+      - label: "Project"
+        link: "/about/"
+      - label: "Team"
         link: "/team/"
       - label: "Contact Us"
         link: "/contact/"
