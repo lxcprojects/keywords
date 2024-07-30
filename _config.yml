@@ -91,23 +91,22 @@ search:
 
 menu:
   - label: "About Us"
-    link: "/about/"
-  - label: "Our Team"
-    link: "/team/"
- # - label: "Documents"
- #   sub:
- #     - label: "Parallax Images"
- #       link: "/exhibits/parallax/"
- #     - label: "Image References"
- #       link: "/exhibits/references/"
- #     - label: "Subset Collection"
- #       link: "/exhibits/subset/"
-  - label: "Documents"
-    link: "/collection/"
+    sub:
+      - label: "Our Team"
+        link: "/team/"
+      - label: "Contact Us"
+        link: "/contact/"
+  - label: "Data"
+    sub:
+      - label: "Documents"
+        link: "/collection/"
+      - label: "Keywords"
+        link: "/keywords_descriptions/abuse.html"
+      - label: "People"
+        link: "/people/"
   - label: "Resources"
     link: "/resources/"
   - label: "Search"
     link: "/search/"
-  - label: "Contact Us"
-    link: "/contact/"
+
 
