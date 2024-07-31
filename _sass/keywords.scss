@@ -1,11 +1,13 @@
-main a {
-    color: $dark-background;
+main {
+    a:not(.badge) {
+        color: $dark-background;
 
-    &:hover {
-        color: $dark-background;
-    }
-    &:visited {
-        color: $dark-background;
+        &:hover {
+            color: $dark-background;
+        }
+        &:visited {
+            color: $dark-background;
+        }
     }
 }
 
@@ -24,15 +26,22 @@ main a {
     }
 }
 
-#side-nav-sm {
+#side-nav-sm,
+.facet-sidebar {
+    .list-group-item {
+        border-color: $light-text;
+    }
     .list-group-item-dark,
     .list-group-item:hover {
         background-color: $light-link-hover;
     }
 }
-.facet-sidebar {
-    .list-group-item-dark,
-    .list-group-item:hover {
-        background-color: $light-link-hover;
+
+#people-of-keywords {
+    a.list-group-item {
+        border-color: $light-text;
+        &:hover {
+            background-color: $light-link-hover;
+        }
     }
 }
