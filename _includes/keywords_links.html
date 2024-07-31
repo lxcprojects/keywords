@@ -28,12 +28,20 @@
     {%- for value in values -%}
         {% assign key = value | strip %}
         {% assign site_data = site[include.collection] | where: include.target_field, key | first %}
-        <a href="{{ site_data.url }}" class="badge badge-pill badge-info mr-1">
-            {% if display %}
-                <div>{{ site_data[display] }}</div>
-            {% else %}
-                <div>{{ key }}</div>
-            {% endif %}
-        </a>
+        {% assign display_label = site_data[display] %}
+
+        {% if display != nil and display_label == nil %}
+            <span class="badge badge-pill badge-secondary mr-1">{{ key }}</span>
+        {% else %}
+            <a href="{{ site_data.url }}" class="badge badge-pill badge-info mr-1">
+                {% if display_label %}
+                    <div>{{ display_label }}</div>
+                {% else %}
+                    <div>{{ key }}</div>
+                {% endif %}
+            </a>
+        {% endif %}
+
+        
     {%- endfor -%}
 {% endif %}
