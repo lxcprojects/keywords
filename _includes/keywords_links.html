@@ -6,6 +6,8 @@
         - collection : (Optional) collection name that should be linked. Use name from _config.yml
                         Defaults to the current page's collection
         - delimiter : delimiter between values in `values`. Default: "|"
+        - display_field: (Optional) Which field should you use for the display label
+                            Defaults to `pid`
 {% endcomment %}
 
 {% assign collection = include.collection %}
@@ -18,6 +20,8 @@
     {% assign delimiter = "|" %}
 {% endunless %}
 
+{% assign display = include.display_field %}
+
 {% assign values = include.values | strip | split: delimiter %}
 
 {% if include.target_field %}
@@ -25,7 +29,11 @@
         {% assign key = value | strip %}
         {% assign site_data = site[include.collection] | where: include.target_field, key | first %}
         <a href="{{ site_data.url }}" class="badge badge-pill badge-info mr-1">
-            <div>{{ key }}</div>
+            {% if display %}
+                <div>{{ site_data[display] }}</div>
+            {% else %}
+                <div>{{ key }}</div>
+            {% endif %}
         </a>
     {%- endfor -%}
 {% endif %}

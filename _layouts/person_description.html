@@ -28,18 +28,21 @@ meta:
     collection: keywords
     targetField: pid
     delimiter: ','
+    displayField: "label"
   - label: "Also present in"
     value: page.other_documents_present
     type: internal-link
     collection: keywords
     targetField: pid
     delimiter: ","
+    displayField: "label"
   - label: "Related to"
     value: page.related_people_ids
     type: internal-link
     collection: people
     targetField: pid
     delimiter: ","
+    displayField: "name"
   - label: "Found in stories"
     value: page.stories
   - label: "Editor"
