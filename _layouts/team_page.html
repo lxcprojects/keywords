@@ -3,27 +3,37 @@ layout: page
 ---
 
 <div class="container">
-  <div class="row">
-    {{ content }}
-  </div>
+  {% if content %}
+    <div class="row">
+      {{ content }}
+    </div>
+  {% endif %}
 
-  <div class="row my-4">
+  <div class="my-4">
     {% for person in site.team %}
-      <div class="row">
-        <h3 class="row">{{ person.name }}</h3>
-        <div class="row">
-          <div class="col-sm-4">
-            {% if person.image %}
-              <img class="w-100" src='{{ person.image | absolute_url}}' alt='Image of {{ person.name }}' />
-            {% endif %}
-          </div>
+      <div class="card w-100 my-4">
+        <div class="card-body row">
+          {% if person.image %}
+            <div class="col-sm-4">
+              <img class="" src="{{ person.image | absolute_url }}" alt="Image of {{ person.name }}" >
+            </div>
+          {% endif %}
           <div class="col-sm">
-            {{ person.content }}
+            <h2 id="{{person.name | slugify}}" class="card-title">{{ person.name }}</h2>
+            <div class="card-text">
+              {{ person.content }}
+            </div>
           </div>
         </div>
       </div>
     {% endfor %}
   </div>
-
+  <style>
+    .card-body img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+    }
+  </style>
 </div>
 
