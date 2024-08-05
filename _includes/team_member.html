@@ -1,0 +1,28 @@
+{% comment %}
+
+Description of a team member
+
+{% endcomment %}
+
+{% assign person = include.person %}
+
+{% if person %}
+<div class="card w-100 my-4">
+    <div class="card-body row">
+        {% if person.image %}
+            <div class="col-sm-4">
+                <img class="" src="{{ person.image | absolute_url }}" alt="Image of {{ person.name }}" >
+            </div>
+        {% endif %}
+        <div class="col-sm">
+            <h2 id="{{ person.name | slugify }}" class="card-title">{{ person.name }}</h2>
+            {% if person.jobtitle %}
+                <h3 class="team-member-title card-text">{{ person.jobtitle }}</h3>
+            {% endif %}
+            <div class="card-text">
+                {{ person.content }}
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

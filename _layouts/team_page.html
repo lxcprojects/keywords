@@ -2,32 +2,36 @@
 layout: page
 ---
 
-<div class="container">
+<div id="team-page" class="container">
   {% if content %}
     <div class="row">
       {{ content }}
     </div>
   {% endif %}
 
-  <div class="my-4">
-    {% for person in site.team %}
-      <div class="card w-100 my-4">
-        <div class="card-body row">
-          {% if person.image %}
-            <div class="col-sm-4">
-              <img class="" src="{{ person.image | absolute_url }}" alt="Image of {{ person.name }}" >
-            </div>
-          {% endif %}
-          <div class="col-sm">
-            <h2 id="{{person.name | slugify}}" class="card-title">{{ person.name }}</h2>
-            <div class="card-text">
-              {{ person.content }}
-            </div>
-          </div>
-        </div>
-      </div>
+  {% assign teams = site.team | where_exp: "person", "person.team != nil" | map: "team" | uniq %}
+  {% assign without_team = site.team | where: "team", nil | sort: "order" %}
+
+  <div class="my-5">
+    {% for team in teams %}
+      <h2>{{ team }}</h2>
+      {% assign members = site.team | where: "team", team | sort: "order" %}
+      {% for member in members %}
+        {% include team_member.html person=member %}
+      {% endfor %}
     {% endfor %}
   </div>
+
+  {% if teams.size > 0 and without_team.size > 0 %}
+    <hr>
+  {% endif %}
+
+  <div class="my-5">
+    {% for person_no_team in without_team %}
+      {% include team_member.html person=person_no_team %}
+    {% endfor %}
+  </div>
+
   <style>
     .card-body img {
       max-height: 100%;
