@@ -45,3 +45,10 @@ main {
         }
     }
 }
+
+// !importants in order to override Bootstrap classes
+.gallery-thumb {
+    height: initial;
+    max-height: 250px !important;
+    max-width: 250px !important;
+}
