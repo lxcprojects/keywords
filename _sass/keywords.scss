@@ -53,3 +53,13 @@ main {
         }
     }
 }
+
+footer {
+    height: initial;
+
+    #cc-license-logo img {
+        height: 16px !important;
+        margin-left: 3px;
+        vertical-align: text-bottom;
+    }
+}
