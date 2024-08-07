@@ -1,7 +1,7 @@
 <header class="site-header">
     <nav class="navbar navbar-expand-md banner">
         <a class="navbar-brand d-flex align-items-center" rel="author" href="{{ '/' | relative_url }}">
-            <img src="/assets/figures/Icon-02.png" alt="Site Logo" style="height: 40px; margin-right: 10px;">
+            <img src="{{ site.header | absolute_url }}" alt="Site Logo" style="height: 40px; margin-right: 10px;">
         <a class="title navbar-brand" rel="author" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
         <span class="subtitle navbar-text">{{ site.subtitle | escape }}</span>
   <!-- Collapse button -->
