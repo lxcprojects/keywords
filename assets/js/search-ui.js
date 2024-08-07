@@ -27,7 +27,7 @@ function displayResult(item, fields, url, subtitles) {
   var meta = subtitles
     .filter(subtitle => fields.includes(subtitle))
     .map((subtitle) => {
-      let label = subtitle.replace('_', ' ');
+      let label = subtitle.replaceAll('_', ' ');
       label = `${label.charAt(0).toUpperCase()}${label.slice(1)}`
       return `<b>${label}</b>: ${item[subtitle]}`;
     })

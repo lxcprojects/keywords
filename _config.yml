@@ -2,8 +2,7 @@ title: Kinship and Belonging
 subtitle: Keywords for Black Louisiana
 header: /assets/figures/Icon-02.png
 gallery: True
-
-
+url: https://docs.k4bl.org
 
 # --------------------------------------------------------------
 # COLLECTION SETTINGS
@@ -15,8 +14,6 @@ gallery: True
 # ~> https://jekyllrb.com/docs/collections/
 
 collections:
-  exhibits:
-    output: true
   keywords: # name of collection
     output: true # makes sure pages are output as html files
     layout: "keywords_item" # the layout for the pages to use
@@ -24,10 +21,6 @@ collections:
       source: "keywords.csv" # path to the metadata file within `_data`
     images:
       source: "raw_images/keywords" # path to the directory of images within `_data`
-  # Team collection used to enumerate project team members in '_team' folder
-  team:
-    output: false
- 
   keywords_descriptions:
     output: true
     layout: "facet_page_layout"
@@ -38,6 +31,9 @@ collections:
     layout: "person_description"
     metadata:
       source: "k4blpeople.csv"
+  # Team collection used to enumerate project team members in '_team' folder
+  team:
+    output: false
 
 # --------------------------------------------------------------
 # SEARCH INDEX SETTINGS
@@ -56,20 +52,18 @@ search:
         fields: # the metadata fields to index
           - pid
           - label
-          - filing_date
+          - lhc_filing_date
           - full_index
-          - doc_origin
+          - lhc_doc_origin
           - language
-          - archive
-          - governing_body
+          - lhc_archive
+          - lhc_source
           - names_black
           - names_white
           - names_native
-          - doc_type
+          - lhc_doc_type
           - keywords
-
-
-
+          - abstract
 
 # --------------------------------------------------------------
 # SITE MENU SETTINGS
@@ -105,4 +99,3 @@ menu:
         link: "/contact/"
   - label: "Search"
     link: "/search/"
-
