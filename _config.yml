@@ -25,7 +25,7 @@ collections:
     output: true
     layout: "facet_page_layout"
     metadata:
-      source: "keywords_descriptions.csv"
+      source: "keywordsglossary.csv"
   people:
     output: true
     layout: "person_description"
@@ -90,7 +90,7 @@ menu:
       - label: "Documents"
         link: "/collection/"
       - label: "Keywords"
-        link: "/keywords_descriptions/abuse.html"
+        link: "/keywords_descriptions/"
       - label: "People"
         link: "/people/"
       - label: "Stories"
