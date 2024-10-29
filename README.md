@@ -26,6 +26,7 @@ Generate pages for our data:
 ``` sh
 bundle exec rake wax:pages keywords
 bundle exec rake wax:pages keywords_descriptions
+bundle exec rake wax:pages people
 ```
 
 Generate search index:
