@@ -44,6 +44,10 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
+      # Installs ImageMagick, caches download. See https://github.com/mfinelli/setup-imagemagick
+      - name: Setup ImageMagick
+        uses: mfinelli/setup-imagemagick@v6.0.0
+
       # Run the Wax tasks for our Keywords collections
       # This will generate pages, search index, and IIIF image derivatives
       - name: 'Wax build: Keywords'
