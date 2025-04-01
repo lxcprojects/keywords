@@ -34,7 +34,9 @@
                             aria-expanded='false'>
                         {{ item.label }}
                     </a>
-                    <div class='dropdown-menu' aria-labelledby='wax-{{ item.label | slugify }}-dropdown'>
+                    <div class='dropdown-menu' 
+                            aria-labelledby='wax-{{ item.label | slugify }}-dropdown'
+                            style="height: 0">
                         {% for sub in item.sub %}
                         <a class='dropdown-item' href='{{ sub.link | absolute_url }}'>
                             {{ sub.label }}
