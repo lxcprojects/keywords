@@ -63,7 +63,7 @@
       {% endif %}
         
         <fieldset id="{{ facet_name | slugify }}-set" class="card m-1 facet-card">
-          <div class="facet-header card-header">
+          <div class="facet-header card-header p-0">
             <a
               class="facet-bn"
               data-toggle="collapse"
@@ -72,7 +72,7 @@
               aria-expanded="false"
               aria-controls="{{ facet_name | slugify }}-collapse"
             >
-              <legend>{{ facet_name | replace: "_", " " }}<span
+              <legend class="px-4 py-2">{{ facet_name | replace: "_", " " }}<span
                   aria-hidden="true"
                   class="facets-chevron facets-chevron-bottom float-right ml-2"
                 ></span>
@@ -84,15 +84,15 @@
             <div class="card-body">
               {% for value in facet_values %}
               <div class="facet-item">
-                <label for="{{value}}">
-                  <input
+                <label for="{{ value | slugify }}">
+                  <input 
                     id="{{value | slugify}}"
                     class="{{facet | slugify}}"
                     type="checkbox"
                     name="{{value}}"
                     value="{{value}}"
                   />
-                  {{value}}
+                  <span class="mx-2">{{value}}</span>
                 </label>
               </div>
               {% endfor %}

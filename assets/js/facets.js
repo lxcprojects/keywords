@@ -44,7 +44,6 @@ var i;
 
 for (i = 0; i < numberFacets; i++) {
   facets[setIds[i]] = new Array();
-  // console.log(facets[setIds[i]])
 }
 
 // add code that runs whenever a checkbox is turned on or off
@@ -52,22 +51,18 @@ $("#facets :checkbox").change(function () {
   // find the checkboxes parent fieldset id by taking its class name
   // and adding "-set" to the end
   var pinClass = this.className + "-set";
-  //console.log(pinClass);
 
   // find the id for this checkbox
   var pinId = this.id;
-  //console.log(pinId);
 
   // use fieldset id as key to facets object; add or remove current checkbox id
   // from the array for that key.
   if (this.checked) {
     facets[pinClass].push(pinId);
-    //console.log(facets[pinClass]);
   } else {
     facets[pinClass] = facets[pinClass].filter(function (value, index, arr) {
       return value != pinId;
     });
-    //console.log(facets[pinClass]);
   }
 
   // after updating the facets object, rerun refreshGallery()
