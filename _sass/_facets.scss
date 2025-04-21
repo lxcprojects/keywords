@@ -290,8 +290,8 @@ p.card-text {
     (Copy the CSS below if you're importing into your own theme)
 */
 
-input[type="checkbox"] {
-  // margin-right: 4px;
+.facet-item label, input[type="checkbox"] {
+  cursor: pointer;
 }
 
 .facet-card {
