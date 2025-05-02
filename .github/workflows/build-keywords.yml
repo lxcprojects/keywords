@@ -65,24 +65,15 @@ jobs:
         shell: bash
         run: bundle exec rake wax:derivatives:iiif keywords
 
-      # Run the Wax tasks for our Keywords collections
-      # This will generate pages, search index, and IIIF image derivatives
-      - name: 'Wax build: Keywords'
+      # Run the Wax tasks: generate pages and search index
+      - name: 'Wax build: pages'
         id: wax-tasks-kw
         shell: bash
         run: |
           bundle exec rake wax:pages keywords
+          bundle exec rake wax:pages keywords_descriptions
+          bundle exec rake wax:pages people
           bundle exec rake wax:search main
-      
-      # Run Wax tasks for the 'Keywords descriptions' collection
-      # Only needs pages generated for now
-      - name: 'Wax build: Keywords descriptions'
-        shell: bash
-        run: bundle exec rake wax:pages keywords_descriptions
-      
-      - name: 'Wax build: People'
-        shell: bash
-        run: bundle exec rake wax:pages people
 
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
