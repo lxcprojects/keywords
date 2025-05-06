@@ -22,3 +22,29 @@ layout: default
         {% endfor %}
     </div>
 </section>
+
+<script type="module">
+    import * as Motion from "{{ '/assets/js/motion.12.9.7.min.js' | absolute_url }}";
+
+    const selectors = [
+        '#people-of-keywords',
+        '.list-group-item'
+    ].join(' ');
+
+    // Initial page load
+    Motion.animate(selectors, { opacity: 0 }, { duration: 0 })
+        .then(() => {
+            Motion.animate(
+                selectors,
+                { opacity: 1 },
+                { delay: Motion.stagger(0.05) }
+            )
+        });
+
+    Motion.hover(selectors, (elem) => {
+        Motion.animate(elem, { scale: 1.05 }, { duration: 0.2 });
+        return () => {
+            Motion.animate(elem, { scale: 1 }, { duration: 0.1 });
+        };
+    });
+</script>

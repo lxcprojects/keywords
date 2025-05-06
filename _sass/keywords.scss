@@ -23,6 +23,7 @@ main {
 }
 
 .gallery-item-facets {
+    overflow: hidden;
     .card {
         &:hover {
             box-shadow: 0 0 5px;
@@ -79,5 +80,4 @@ footer {
 .gallery-thumb {
     height: initial;
     max-height: 250px !important;
-    max-width: 250px !important;
 }

@@ -1,33 +1,54 @@
 <header class="site-header">
     <nav class="navbar navbar-expand-md banner">
         <a class="navbar-brand d-flex align-items-center" rel="author" href="{{ '/' | relative_url }}">
-            <img src="{{ site.header | absolute_url }}" alt="Site Logo" style="height: 40px; margin-right: 10px;">
-        <a class="title navbar-brand" rel="author" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
+            <img src="{{ site.header | absolute_url }}" 
+                alt="Site Logo" 
+                style="height: 40px; margin-right: 10px;">
+        </a>
+        <a class="title navbar-brand" rel="author" href="{{ '/' | relative_url }}">
+            {{ site.title | escape }}
+        </a>
         <span class="subtitle navbar-text">{{ site.subtitle | escape }}</span>
-  <!-- Collapse button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent15"
-    aria-controls="navbarSupportedContent15" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon">&#9776;</span></button>
+        <!-- Collapse button -->
+        <button class="navbar-toggler" 
+                type="button" 
+                data-toggle="collapse" 
+                data-target="#navbarSupportedContent15"
+                aria-controls="navbarSupportedContent15" 
+                aria-expanded="false" 
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">&#9776;</span>
+        </button>
 
-  <!-- Collapsible content -->
+        <!-- Collapsible content -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent15">
-                
-    <!-- Links -->
+            <!-- Links -->
             <ul class="navbar-nav ml-auto">
             {% for item in site.menu %}
                 {% if item.sub %}
                 <li class='nav-item dropdown'>
-                <a class='nav-link dropdown-toggle' href='#' id='wax-{{ item.label | slugify }}-dropdown' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-                {{ item.label }}
-                </a>
-                <div class='dropdown-menu' aria-labelledby='wax-{{ item.label | slugify }}-dropdown'>
-                {% for sub in item.sub %}
-                <a class='dropdown-item' href='{{ sub.link | absolute_url }}'>{{ sub.label }}</a>
-                {% endfor %}
-                </div>
+                    <a class='nav-link dropdown-toggle' 
+                            href='#' 
+                            id='wax-{{ item.label | slugify }}-dropdown' 
+                            data-toggle='dropdown' aria-haspopup='true' 
+                            aria-expanded='false'>
+                        {{ item.label }}
+                    </a>
+                    <div class='dropdown-menu' 
+                            aria-labelledby='wax-{{ item.label | slugify }}-dropdown'
+                            style="height: 0">
+                        {% for sub in item.sub %}
+                        <a class='dropdown-item' href='{{ sub.link | absolute_url }}'>
+                            {{ sub.label }}
+                        </a>
+                        {% endfor %}
+                    </div>
                 </li>
                 {% else %}
                 <li class='nav-item'>
-                    <a class='nav-link' href='{{ item.link | absolute_url }}'>{{ item.label }}</a>
+                    <a class='nav-link' href='{{ item.link | absolute_url }}'>
+                        {{ item.label }}
+                    </a>
                 </li>
                 {% endif %}
             {% endfor %}                
@@ -35,3 +56,120 @@
         </div>
     </nav>
 </header>
+<style>
+    .dropdown-menu {
+        overflow: hidden;
+    }
+    .dropdown-item.active {
+        background-color: #bae5ce;
+    }
+</style>
+<script type="module">
+    import * as Motion from "{{ '/assets/js/motion.12.9.7.min.js' | absolute_url }}";
+
+    const currentPageNav = document.querySelector(
+        `nav .dropdown-item[href='${document.location.href}']`
+    );
+
+    if (currentPageNav) {
+        currentPageNav.classList.add('active');
+    }
+
+    /**
+     * Bit of a weird mess that "mostly" works.
+     * 
+     * Get on hover functionality to work for the nav dropdown menus.
+     * On mouse hover over the dropdown toggle, open the menu. But if
+     * the mouse leaves the toggle and moves into the menu itself, keep
+     * it open. Close the dropdown if the mouse then leaves the menu.
+     * 
+     * This is currently not able to close the dropdown menu if the mouse
+     * hovers over the toggle then leaves somewhere else, as there is no
+     * straightforward way to get the interactions of the hovering over the
+     * toggle element and the hover over the open menu to interact
+     * meaningfully.
+     * 
+     * On first hover, the menu pops into existance. Subsequent hovers, it
+     * animates as expected. Possible initialization issue.
+     */
+
+    const duration = {
+        dropdown: {
+            show: 0.15,
+            hide: 0.1
+        },
+        menuItem: {
+            show: 0.25,
+            hide: 0.15
+        }
+    };
+
+    function show(element) {
+        const size = getHeight(element);
+        for (const child of element.childNodes) {
+            if (!(child instanceof HTMLElement)) {
+                continue;
+            }
+            if (child.classList.contains('dropdown-toggle')) {
+                element.classList.add('show');
+                child.setAttribute('aria-expanded', true);
+            } else if (child.classList.contains('dropdown-menu')) {
+                child.classList.add('show');
+                Motion.animate(child, { height: size }, { duration: duration.dropdown.show });
+            }
+        }
+    }
+
+    function hide(element) {
+        for (const child of element.childNodes) {
+            if (!(child instanceof HTMLElement)) {
+                continue;
+            }
+            if (child.classList.contains('dropdown-toggle')) {
+                element.classList.remove('show');
+                child.setAttribute('aria-expanded', false);
+            } else if (child.classList.contains('dropdown-menu')) {
+                Motion.animate(child, { height: 0 }, { duration: duration.dropdown.hide })
+                    .then(() => child.classList.remove('show'));
+            }
+        }
+    }
+
+    /**
+     * (Number of menu elements) * (static item height) + (y padding)
+     */
+    function getHeight(el) {
+        return el.querySelectorAll('.dropdown-item').length * 32 + 18;
+    }
+
+    let hovered = [];
+    Motion.hover('.dropdown', (el) => {
+        if (hovered.length !== 0) {
+            hide(hovered.pop());
+        }
+        hovered.push(el);
+        show(el);
+        return (endEvent) => {};
+    });
+
+    Motion.hover('.dropdown-menu', (el) => {
+        const menuId = el.getAttribute('aria-labelledby');
+        return () => {
+            if (hovered.length === 0) {
+                return;
+            }
+            const openMenu = hovered[0];
+            if (openMenu.firstElementChild?.getAttribute('id') === menuId) {
+                hide(openMenu);
+                hovered.pop();
+            }
+        };
+    });
+
+    Motion.hover('.dropdown-item', (item) => {
+        Motion.animate(item, { scale: 1.15 }, { duration: duration.menuItem.show });
+        return () => {
+            Motion.animate(item, { scale: 1 }, { duration: duration.menuItem.hide });
+        };
+    });
+</script>
