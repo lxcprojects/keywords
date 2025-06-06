@@ -117,3 +117,14 @@ header {
         vertical-align: baseline;
     }
 }
+.item-metadata {
+  padding: 2rem;
+  max-height: calc(100vh - 50px);
+  overflow: scroll;
+}
+.image-viewer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 50px);
+}
