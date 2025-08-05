@@ -3,5 +3,4 @@ name: Jamya Davis
 jobtitle: Digital Designer
 image: /assets/figures/headshots/jamya.jpg
 ---
-
-is a senior undergraduate student attending the illustrious Xavier University of Louisiana. Jamya is obtaining her degree in Political Science with a minor in History. Jamya is a member of the Site Design Team for Keywords for Black Louisiana. At school Jamya is involved in various leadership positions including Secretary of Academic Advancement and Social Action Chair of Delta Sigma Theta Sorority Incorporated. Outside the classroom, Jamya enjoys taking care of her plants, connecting with God, spending time with her friends, and going to the gym.
+is a graduate of the illustrious Xavier University of Louisiana. Having earned her degree in Political Science with a double minor in History and Public Health, Jamya is passionate about understanding how systems of power work and how to bridge community needs and resource access. Jamya has been a member of the Digital Team for Keywords for Black Louisiana since Fall 2022, responsible for helping to brainstorm the formation of People and Story Websites, creating a “Data Dictionary,” uploading images and documents to the website, and sharing the digital practices of Keywords at Conferences and with the New Orleans and Louisiana community. 
