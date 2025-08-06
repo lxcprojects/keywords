@@ -1,7 +1,8 @@
 ---
 name: Eola Dance
-jobtitle: Alum, Associate French Editor and Community Engagement Specialist
+jobtitle: Associate French Editor and Community Engagement Specialist
 image: /assets/figures/headshots/eola.jpg
+alum: true
 ---
 is an ethnohistorian with more than 20 years of federal experience in history, art, culture, and preservation. Currently serving as the President & CEO of the Montpelier Foundation, Eola is also the Co-Founder of Kinfolkology. In addition, she previously served as the Superintendent of Fort Monroe National Monument as part of the National Park Service. Eola has worked at the intersection of race, gender, and class in research, historical and cultural preservation, and the narrativization of descendant stories since 2001.  
 
