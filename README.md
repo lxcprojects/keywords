@@ -66,8 +66,7 @@ You should get output similar to the following to know that Jekyll is working. Y
 >  Server running... press ctrl-c to stop.
 > ```
 
-
-## Suggested Developement Workflow
+## Example Developement Workflow
 
 First time setup:
 
@@ -88,9 +87,7 @@ bundle exec rake wax:derivatives:iiif keywords
 
 # --------
 # If the CSV was updated, remove the old pages
-rm -rf _keywords/
-rm -rf _keywords_descriptions/
-rm -rf _people/
+rm _keywords/*.md  _keywords_descriptions/*.md _people/*.md
 
 # Generate website pages
 bundle exec rake wax:pages keywords
@@ -111,3 +108,32 @@ You may not have the correct dependencies to install the required version of Rub
 ``` bash
 sudo apt install build-essential zlib1g-dev
 ```
+
+## Team page setup
+
+The "Our Team" page at `/team/` collects all of the markdown documents in the `_team/` folder in a list view. Each of these individual team member pages need some metadata to be displayed correctly.
+
+- **name** - the team member's name
+- **jobtitle** - their role or title on the project?
+- **image** - the relative file path of the team member's portrait. If left blank or left out, then a placeholder image is used
+- **alum** - (Optional) [true|false] Set this to `true` if this team member has moved on from the project. If no value is provided, this is assumed to be `false`
+- **founder** - (Optional) [true|false] Set this to `true` if this team member was a founding member of the project. If no value is provided, this is assumed to be `false`
+- **order** - (Optional) [Integer] If you need to define an explicit order to the team members list, this property can be defined to set the sorting order. This needs to be an integer in counting order, e.g. between two team members with `order: 1` and `order: 2`, the `order: 1` will appear before `order: 2` on the web site. If any ordering is needed, it is recommended that an explicit order value is then provided for *all* team members.
+
+### Example team member entry
+
+`/_team/my_example_entry.md`
+```
+---
+name: My Name
+jobtitle: Did the cool stuff
+image: /assets/figures/headshots/my_picture.jpg
+alum: true
+---
+
+This is my bio. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+```
+
+This example will add the following to the list of Keywords Alumni: ![Sample team member entry](/assets/figures/example-team-entry.png)

@@ -2,6 +2,8 @@
 name: Jessica Marie Johnson
 jobtitle: Founding Director, Editor-in-Chief
 image: /assets/figures/headshots/drjmj.jpg
+founder: true
+order: 1
 ---
 is an Associate Professor in the Department of History at the Johns Hopkins University and a fellow at the Hutchins Center for African and African American Studies at Harvard University. Johnson is a historian of Atlantic slavery and the Atlantic African diaspora. She is the author of *Wicked Flesh: Black Women, Intimacy, and Freedom in the Atlantic World* (University of Pennsylvania Press, August 2020), winner of the 2021 Lora Romero First Book Publication Prize of the American Studies Association, the 2021 Wesley-Logan Prize form the American Historical Association, the 2021 Rosalyn Terborg-Penn Prize for Outstanding Original Scholarship on Gender and Sexuality in the African Diaspora from the Association for the Study of the Worldwide African Diaspora, the 2021 Frank L. and Harriet C. Owsley Award for Best Book in Southern History from the Southern Historical Association, the 2020 Kemper and Leila Williams Prize for Louisiana History, the 2020 Berkshire Conference of Women Historians First Book Prize, the 2020 Rebel Women Lit Caribbean Readers' Award for Best Non-Fiction Book, an Honorable Mention for the 2021 Pauli Murray Book Award from the African American Intellectual History Society, and a finalist for the Frederick Douglass Book Prize from the Gilder-Lehrman Institute.
 

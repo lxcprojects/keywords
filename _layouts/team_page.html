@@ -9,28 +9,40 @@ layout: page
     </div>
   {% endif %}
 
-  {% assign teams = site.team | where_exp: "person", "person.team != nil" | map: "team" | uniq %}
-  {% assign without_team = site.team | where: "team", nil | sort: "order" %}
+  {% assign people = site.team | sort: "order" %}
 
+  <!-- Current team -->
+  {% assign current_team = people | where_exp: "person", "person.alum != true and person.founder != true" %}
   <div class="my-5">
-    {% for team in teams %}
-      <h2>{{ team }}</h2>
-      {% assign members = site.team | where: "team", team | sort: "order" %}
-      {% for member in members %}
-        {% include team_member.html person=member %}
-      {% endfor %}
+    <h2>Current Team</h2>
+    {% for person in current_team %}
+      {% include team_member.html person=person %}
     {% endfor %}
   </div>
 
-  {% if teams.size > 0 and without_team.size > 0 %}
-    <hr>
+  <!-- Founding members -->
+  {% assign founders = people | where_exp: "person", "person.founder" %}
+  {% assign num_founders = founders | size %}
+  {% if num_founders > 0 %}
+  <div class="my-5">
+    <h2>Founding Keywords</h2>
+    {% for founder in founders %}
+      {% include team_member.html person=founder %}
+    {% endfor %}
+  </div>
   {% endif %}
 
+  <!-- Alum section -->
+  {% assign alums = people | where_exp: "person", "person.alum" %}
+  {% assign num_alums = alums | size %}
+  {% if num_alums > 0 %}
   <div class="my-5">
-    {% for person_no_team in without_team %}
-      {% include team_member.html person=person_no_team %}
+    <h2>Keywords Alumni</h2>
+    {% for alum in alums %}
+      {% include team_member.html person=alum %}
     {% endfor %}
   </div>
+  {% endif %}
 
   <style>
     .card-body img {
