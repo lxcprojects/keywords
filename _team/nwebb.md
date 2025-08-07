@@ -1,6 +1,6 @@
 ---
 name: Nadejda Webb
-jobtitle: Assistant Directory, LifexCode
+jobtitle: Assistant Director, LifexCode
 image: /assets/figures/headshots/drwebb.jpg
 ---
 is the Assistant Director of LifexCode: Digital Humanities Against Enclosure and a Visiting Assistant Professor in the Center for Digital Humanities at Johns Hopkins University, where her teaching and research interests include 20th and 21st-century African-American and Post-Colonial literature and digital humanities, imaginaries, and representation.  
