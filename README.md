@@ -65,3 +65,49 @@ You should get output similar to the following to know that Jekyll is working. Y
 >    Server address: http://127.0.0.1:4000
 >  Server running... press ctrl-c to stop.
 > ```
+
+
+## Suggested Developement Workflow
+
+First time setup:
+
+``` bash
+# Install all Ruby dependencies
+bundle install
+```
+
+Development:
+
+``` bash
+# If any of the raw images in `_data/raw_images/` are modified
+# Clear out old IIIF images
+rm -rf img/
+
+# Generate images for website
+bundle exec rake wax:derivatives:iiif keywords
+
+# --------
+# If the CSV was updated, remove the old pages
+rm -rf _keywords/
+rm -rf _keywords_descriptions/
+rm -rf _people/
+
+# Generate website pages
+bundle exec rake wax:pages keywords
+bundle exec rake wax:pages keywords_descriptions
+bundle exec rake wax:pages people
+
+# --------
+# Update search index
+bundle exec rake wax:search main
+```
+
+---
+
+### Installing Ruby on Ubuntu
+
+You may not have the correct dependencies to install the required version of Ruby if you are using Ubuntu. Installing the following should fix this.
+
+``` bash
+sudo apt install build-essential zlib1g-dev
+```
