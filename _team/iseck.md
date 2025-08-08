@@ -1,7 +1,7 @@
 ---
 name: Ibrahima Seck
 jobtitle: Subject Matter Expert, Editorial Team
-image: /assets/figures/headshots/logo.png
+image: /assets/figures/headshots/iseck.jpg
 founder: true
 order: 7
 ---
