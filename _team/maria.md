@@ -2,6 +2,7 @@
 name: María Burgos Carradero
 title: Digital Assistant for Editorial Markup
 image: /assets/figures/headshots/maria.jpg
+alum: true
 ---
 
 is a Team Lead Manager and Solidarity Fellow with the Diaspora Solidarity Lab and a recent graduate of Michigan State University where she earned a Master’s degree in English Literature. María completed her undergraduate studies at the University of Puerto Rico, where she dual-majored in Cellular Molecular Biology & Hispanic Studies. Her interests range from contemporary literary works of Afro-Caribbean poets and writers interested in imagining new worlds and inventing a self beyond colonial doctrines. She is pursuing graduate studies to explore the mapping of decolonial feminism further in Caribbean literature by Black femme writers like Anjelamaría Dávila. Her favorite scholars include Audre Lorde, Octavia E. Butler, Ursula K. Le Guin, Angela Y. Davis, María Lugones, Chela Sandoval y Sylvia Wynther, and many others who have contributed to both the creative creation and methodological mappings of decolonial feminist manifestations. Additionally, she is interested in becoming a Literature Professor and making the literary arts accessible through public libraries, both physical and online, and inclusive creative writing workshops. María hopes to provide a sense of ownership of the writing craft for anyone interested and gestate independent publication of literary works.

@@ -2,6 +2,8 @@
 name: Jennifer Spear
 jobtitle: Subject Matter Expert, Editorial Team
 image: /assets/figures/headshots/drspear.jpg
+founder: true
+order: 8
 ---
 is an Associate Professor of History at Simon Fraser University and previously taught at the University of California, Berkeley; Dickinson College; Macalester College; and the University of Minnesota. Dr. Spear’s research expertise includes early North American history; gender & sexuality; and comparative colonization, slavery, and race.  
 

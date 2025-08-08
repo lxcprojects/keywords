@@ -2,5 +2,6 @@
 name: Essah Torey Cozett Díaz
 jobtitle: Digital Assistant for Editorial Markup
 image: /assets/figures/headshots/essah.jpg
+alum: true
 ---
 is a Liberian-American poet, digital humanist, and community organizer. She completed her Ph.D. at the University of Puerto Rico, Río Piedras in April 2024. Her research is rooted in African migration, memory, oral traditions, and spiritual practices. Díaz is currently a senior research fellow of the Taller Entre Aguas, a micro lab of the Diaspora Solidarities Lab (DSL), a multi- institutional Black feminist digital humanities partnership. She is also the editor of the Archive Liberia Anthology. Díaz served as the lead community organizer of the Cultural Voices Summit with the Women of Color Initiative, and a 2022 Pathways intern with the Office of Digital Humanities at the National Endowment for the Humanities (NEH). Díaz chaired the Caribbean Without Borders Graduate Student Conference from 2019-2022 and, in 2016, she founded Hermanas del Agua, the Puerto Rican chapter of the SisterCARE Alliance, to create a safe space for women and non-binary people to practice strategic self-care. She is also an alumna of the Obsidian Foundation and the Young Scholars of Liberia. Her writing has appeared in several international print and online publications.
