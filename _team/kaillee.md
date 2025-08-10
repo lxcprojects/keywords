@@ -1,6 +1,6 @@
 ---
 name: Kaillee Coleman
-jobtitle: Associate Editor, Spanish Language Team, Spanish Team Lead
+jobtitle: Associate Editor, Spanish Language Team
 image: /assets/figures/headshots/kaillee.jpg
 ---
 is a PhD candidate in the joint Latin American Studies and Art History program at Tulane University in New Orleans, where her research focuses on contemporary Caribbean art and cultural production – with special emphasis on the Black Atlantic and Diaspora Studies. She earned a M.A. in Latin American Studies from Tulane and holds undergraduate degrees in Art History and Interdisciplinary Art (dual emphasis in Visual Art and Theatre) from Seattle University. From 2021-2022, Kaillee was the recipient of a U.S. Dept. of Education Foreign Language and Area Studies (FLAS) Fellowship in Haitian Creole. In 2022-2023, she was the sole recipient of the William J. Griffith Award for an Outstanding Graduate Student Instructor in Latin American Studies, awarded by the Stone Center for Latin American Studies at Tulane University.  
