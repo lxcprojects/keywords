@@ -1,7 +1,7 @@
 ---
 name: Chenise Calhoun
-jobtitle: Co-Project Manager & Community Engagement Fellow, French Language Team
+jobtitle: Transcriber and Translator, French Langauge Team
 image: /assets/figures/headshots/chenise.jpg
-alum: true
+
 ---
 is a 6th year PhD candidate in the French studies program at Tulane University. Her dissertation examines contemporary Moroccan cultural memory as it pertains to racialized peoples as well as historical and cultural ties to the Sahara, Sahel and West Africa. Chenise is a member on the board of Louisiana Museum of African American History, a nonprofit educational, historical and research organization tasked with collecting, preserving and documenting the true history of people of African descent in Louisiana. She is a Translation Lab member with Diaspora Solidarities Lab, translating texts written by African and Afro-diasporic thinkers and creatives into non-colonial African languages [Swahili, Twi, Wolof] to communicate knowledge and ideas in the languages of its people and create deep connections with community. Additionally she is a graduate member of the Center for African Mediterranean Studies at Arizona State University.
