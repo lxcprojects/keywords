@@ -34,9 +34,18 @@ main {
 .facet-sidebar {
     .list-group-item {
         border-color: $light-text;
+
+        :hover {
+            background-color: $light-link-hover;
+        }
+
+        &.disabled {
+            :hover {
+                background-color: initial;
+            }
+        }
     }
-    .list-group-item-dark,
-    .list-group-item:hover {
+    .list-group-item-dark {
         background-color: $light-link-hover;
     }
 }

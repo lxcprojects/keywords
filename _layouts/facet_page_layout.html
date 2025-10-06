@@ -15,11 +15,40 @@ Generate the list of nav links to all of our Keywords
     {%- if pageName != currentPage-%}
       {%- assign activeClass = "" -%}
     {%- endif -%}
-    <li class="list-group-item {{ activeClass }} p-0">
-      <a href="{{ page.url | relative_url }}">
+
+    {% comment %}
+      Take the list of keywords, disable keyword links IF
+        - No Description
+        - No documents in the site
+    {% endcomment %}
+
+    {% assign isDisabled = true %}
+
+    {% if page.Description != nil %}
+      {% assign isDisabled = false %}
+    {% endif %}
+
+    {%- assign docs = page["Main Bias Set Records"] | split: "," -%}
+    {%- for id in docs -%}
+      {%- capture tmpPath -%}_keywords/{{ id }}.md{%- endcapture -%}
+      {%- assign docInSite = site.documents | find: 'path', tmpPath -%}
+      {%- if docInSite != nil -%}
+        {%- assign isDisabled = false -%}
+        {% break %}
+      {%- endif -%}
+    {%- endfor -%}
+
+    {% if isDisabled %}
+      <li class="list-group-item p-0 disabled">
         <div class="py-2 px-3">{{ page.Keyword }}</div>
-      </a>
-    </li>
+      </li>
+    {% else %}
+      <li class="list-group-item {{ activeClass }} p-0">
+        <a href="{{ page.url | relative_url }}">
+          <div class="py-2 px-3">{{ page.Keyword }}</div>
+        </a>
+      </li>
+    {% endif %}
   {% endfor %}
 {%- endcapture -%}
 
