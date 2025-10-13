@@ -38,17 +38,13 @@ Generate the list of nav links to all of our Keywords
       {%- endif -%}
     {%- endfor -%}
 
-    {% if isDisabled %}
-      <li class="list-group-item p-0 disabled">
-        <div class="py-2 px-3">{{ page.Keyword }}</div>
-      </li>
-    {% else %}
+    {% unless isDisabled %}
       <li class="list-group-item {{ activeClass }} p-0">
         <a href="{{ page.url | relative_url }}">
           <div class="py-2 px-3">{{ page.Keyword }}</div>
         </a>
       </li>
-    {% endif %}
+    {% endunless %}
   {% endfor %}
 {%- endcapture -%}
 
