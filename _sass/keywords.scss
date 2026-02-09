@@ -92,3 +92,21 @@ footer {
     max-height: 250px !important;
     max-width: 250px !important;
 }
+
+// Highlight footnotes in trascription/translation
+a.footnote {
+    background-color: #005442;
+    color: white !important;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin: 0 2px;
+    text-decoration: underline;
+
+    transition: all 250ms ease-out;
+
+    &:hover {
+        background-color: white;
+        color: #005442 !important;
+        outline: 1px solid #005442;
+    }
+}
