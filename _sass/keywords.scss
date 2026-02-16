@@ -1,4 +1,5 @@
 @use "variables" as *;
+@use "./document-page.scss";
 
 main {
     a:not(.badge) {
@@ -91,21 +92,4 @@ footer {
     height: initial;
     // max-height: 250px !important;
     max-width: 250px !important;
-}
-
-.item-metadata {
-  padding: 0;
-  
-  .tab-content .active {
-    height: calc(100vh - 93px);
-    overflow-y: auto;
-    overflow-x: hidden;
-    border: 0;
-  }
-}
-.image-viewer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 43px);
 }
