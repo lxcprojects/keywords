@@ -1,6 +1,7 @@
 <script defer src="{{ '/assets/js/openseadragon/openseadragon.min.js' | absolute_url }}"></script>
 
 {%- comment -%}
+###############################################################################
     Find all of the "simple" image derivatives to support multiple images
     in a single item without using IIIF. The simple image derivatives are
     generated as below by the `wax:derivatives:simple` task:
@@ -19,6 +20,7 @@
             fullwidth.jpg
             thumbnail.jpg
     </code>
+###############################################################################
 {%- endcomment -%}
 
 {% assign my_id = page.pid %}
@@ -36,6 +38,7 @@
 <div id="osd" class="image-viewer"></div>
 
 <script>
+    // Finds all images for an item, sets up the image viewer
     $(document).ready(function() {
         const pid = "{{ images }}".split(',')
             .filter((element) => element != null && element != '');
