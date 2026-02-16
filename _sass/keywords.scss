@@ -1,4 +1,5 @@
 @use "variables" as *;
+@use "./document-page.scss";
 
 main {
     a:not(.badge) {
@@ -89,7 +90,7 @@ footer {
 // !importants in order to override Bootstrap classes
 .gallery-thumb {
     height: initial;
-    max-height: 250px !important;
+    // max-height: 250px !important;
     max-width: 250px !important;
 }
 

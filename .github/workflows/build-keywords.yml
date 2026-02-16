@@ -59,11 +59,11 @@ jobs:
           key: ${{ runner.os }}-image-derivatives-${{ hashFiles('_data/raw_images/keywords/*.jp*g', '_data/raw_images/keywords/**/*.jp*g') }}
       
       # Generate image derivatives if cache is not found
-      - name: 'Generate IIIF image derivatives'
+      - name: 'Generate simple image derivatives'
         id: gen-img-derivs
         if: steps.cache-image-derivs.outputs.cache.hit != 'true'
         shell: bash
-        run: bundle exec rake wax:derivatives:iiif keywords
+        run: bundle exec rake wax:derivatives:simple keywords
 
       # Run the Wax tasks: generate pages and search index
       - name: 'Wax build: pages'
