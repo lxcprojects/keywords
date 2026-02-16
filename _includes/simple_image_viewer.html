@@ -1,3 +1,63 @@
-<div class='image-viewer'>
-    <img class='img-fluid mh-100' src='{{ include.full_image | absolute_url }}' alt='{{ page.label | slugify }}'/>
-</div>
+<script defer src="{{ '/assets/js/openseadragon/openseadragon.min.js' | absolute_url }}"></script>
+
+{%- comment -%}
+    Find all of the "simple" image derivatives to support multiple images
+    in a single item without using IIIF. The simple image derivatives are
+    generated as below by the `wax:derivatives:simple` task:
+
+    <code>
+    raw_images/
+        <pid>/
+            <pid>-<idx1>.jpeg
+            <pid>-<idx2>.jpeg
+
+    img/derivatives/simple/
+        <pid>-<idx1>/
+            fullwidth.jpg
+            thumbnail.jpg
+        <pid>-<idx2>/
+            fullwidth.jpg
+            thumbnail.jpg
+    </code>
+{%- endcomment -%}
+
+{% assign my_id = page.pid %}
+{% assign match_string = "/img/derivatives/simple/" | append: my_id %}
+{% assign images = "" %}
+
+{% for file in site.static_files %}
+    {% if file.path contains match_string and file.name == "fullwidth.jpg" %}
+        {%- capture images -%}
+            {{ images }},{{ file.path | absolute_url }}
+        {%- endcapture -%}
+    {% endif %}
+{% endfor %}
+
+<div id="osd" class="image-viewer"></div>
+
+<script>
+    $(document).ready(function() {
+        const pid = "{{ images }}".split(',')
+            .filter((element) => element != null && element != '');
+        const tileSources = pid.map((imgUrl) => ({
+            type: 'image',
+            url: imgUrl,
+            crossOriginPolicy: 'Anonymous',
+            ajaxWithCredentials: false
+        }));
+
+        if (tileSources.length == 0) {
+            return;
+        }
+
+        OpenSeadragon({
+            id: 'osd',
+            sequenceMode: true,
+            prefixUrl: "{{ '/assets/js/openseadragon/images/' | absolute_url }}",
+            tileSources: tileSources,
+            homeFillsViewer: false,
+            showReferenceStrip: true,
+            maxZoomLevel: 5,
+        });
+    });
+</script>
