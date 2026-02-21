@@ -6,7 +6,7 @@ permalink: /journey/
 
 ## What is Keywords for Black Louisiana?
 
-![Keywords Black History in Louisiana Summer Workshop IV (2025)](assets/figures/img_20250806_185034.heic)  
+![Keywords Black History in Louisiana Summer Workshop IV (2025)](assets/figures/2025k4bl-journey.png)  
 
 Keywords for Black Louisiana (K4BL) is a collective of researchers creating digital projects highlighting the Black life and culture of the Gulf Coast. With the support of funding from the National Historic Publications and Records Commission, K4BL is building a community-engaged digital edition of annotated, transcribed and translated manuscript documents from 18th century (French and Spanish) Louisiana. Everywhere there was slavery, Black people resisted. The stories in these documents describe the lives and resistance of enslaved and free people of African descent against bondage, colonialism, and the everyday terror of slavery. Access to the stories of Black life in these documents has been limited to those trained in paleography or with French and/or Spanish translation skills. Providing access to the stories in these documents through English language translations and digital access does more than offer researchers, teachers, public historians, and artists opportunities to learn from the centuries-long Black freedom struggle Gulf Coast communities have been engaged in. It also creates a tremendous resource for African descended communities in Louisiana whose ancestors fueled some of the most important moments in American history.  
 
