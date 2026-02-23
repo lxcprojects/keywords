@@ -74,12 +74,14 @@
               {% assign stripped_value = split_value | strip %}
               {% capture temp_facet_values %}{{ temp_facet_values | append: stripped_value }}{{ separator }}{% endcapture %}
             {% endfor %}
+{% comment %}
           {% elsif option contains "|" %}
             {% assign split_values = {{option}} | split: "|" %}
             {% for split_value in split_values %}
               {% assign stripped_value = split_value | strip %}
               {% capture temp_facet_values %}{{ temp_facet_values | append: stripped_value }}{{ separator }}{% endcapture %}
             {% endfor %}
+{% endcomment %}
           {% else %}
             {% capture temp_facet_values %}{{ temp_facet_values | append: option}}{{ separator }}{% endcapture %}
           {% endif %}

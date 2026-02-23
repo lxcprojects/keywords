@@ -26,7 +26,7 @@ Explore a sample of the documents below.
 {% include
     gallery.html
     collection='keywords'
-    facet_by='language,keywords'
+    facet_by='language'
     num_column=4
     sortBy='filing_date'
     separator=','
