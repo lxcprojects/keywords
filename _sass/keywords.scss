@@ -110,3 +110,9 @@ a.footnote {
         outline: 1px solid #005442;
     }
 }
+
+header {
+    .nav-item svg {
+        vertical-align: baseline;
+    }
+}
