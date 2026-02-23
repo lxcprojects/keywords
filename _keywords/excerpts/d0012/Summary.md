@@ -1,0 +1,2 @@
+# Summary
+Jean Baptiste Marly negotiates a contract for his wife Venus’s freedom. He agrees to serve her enslaver Jean Joseph Delfaut de Pontalba, an infantry officer and the commander at Pointe Coupée, as cook for three years. During that time, Pontalba will remain responsible for Venus’s care, providing necessities like food and medicine. After Marly’s three years of service, Venus will be free.  
