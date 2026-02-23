@@ -16,18 +16,31 @@
             {% for item in site.menu %}
                 {% if item.sub %}
                 <li class='nav-item dropdown'>
-                <a class='nav-link dropdown-toggle' href='#' id='wax-{{ item.label | slugify }}-dropdown' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-                {{ item.label }}
+                    <a  id='wax-{{ item.label | slugify }}-dropdown'
+                        class='nav-link dropdown-toggle'
+                        href='#'
+                        data-toggle='dropdown'
+                        aria-haspopup='true'
+                        aria-expanded='false'>
+                        {{ item.label }}
                 </a>
                 <div class='dropdown-menu' aria-labelledby='wax-{{ item.label | slugify }}-dropdown'>
-                {% for sub in item.sub %}
-                <a class='dropdown-item' href='{{ sub.link | absolute_url }}'>{{ sub.label }}</a>
-                {% endfor %}
+                    {% for sub in item.sub %}
+                    <a class='dropdown-item' href='{{ sub.link | absolute_url }}'>{{ sub.label }}</a>
+                    {% endfor %}
                 </div>
                 </li>
                 {% else %}
                 <li class='nav-item'>
-                    <a class='nav-link' href='{{ item.link | absolute_url }}'>{{ item.label }}</a>
+                    <a class='nav-link' href='{{ item.link | absolute_url }}'>
+                        {% if item.icon %}
+                        {% assign iconName = item.icon | prepend: 'icons/' | append: '.html' %}
+                        <span class="ml-2">
+                            {% include {{ iconName }} %}
+                        </span>
+                        {% endif %}
+                        {{ item.label }}
+                    </a>
                 </li>
                 {% endif %}
             {% endfor %}                

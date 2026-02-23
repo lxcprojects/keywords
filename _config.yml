@@ -117,3 +117,4 @@ menu:
     link: "https://stories.k4bl.org"
   - label: "Search"
     link: "/search/"
+    icon: "search"
