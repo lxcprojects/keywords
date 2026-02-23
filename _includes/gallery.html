@@ -74,6 +74,12 @@
               {% assign stripped_value = split_value | strip %}
               {% capture temp_facet_values %}{{ temp_facet_values | append: stripped_value }}{{ separator }}{% endcapture %}
             {% endfor %}
+          {% elsif option contains "|" %}
+            {% assign split_values = {{option}} | split: "|" %}
+            {% for split_value in split_values %}
+              {% assign stripped_value = split_value | strip %}
+              {% capture temp_facet_values %}{{ temp_facet_values | append: stripped_value }}{{ separator }}{% endcapture %}
+            {% endfor %}
           {% else %}
             {% capture temp_facet_values %}{{ temp_facet_values | append: option}}{{ separator }}{% endcapture %}
           {% endif %}
@@ -172,7 +178,7 @@
                     {% assign display_fields = include.display_fields | split: "," %}
                     {% for df in display_fields %}
                       {% if item[df] %}
-                        <div class="card-text small">
+                        <div class="card-text small mb-2">
                           {{ item[df] }}
                         </div>
                       {% endif %}

@@ -26,10 +26,10 @@ Explore a sample of the documents below.
 {% include
     gallery.html
     collection='keywords'
-    facet_by='language'
+    facet_by='language,keywords'
     num_column=4
     sortBy='filing_date'
     separator=','
-    display_fields="lhc_source,lhc_doc_origin,lhc_filing_date"
+    display_fields="lhc_source,lhc_doc_origin,lhc_filing_date,keywords"
 %}
 
