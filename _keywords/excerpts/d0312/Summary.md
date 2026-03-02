@@ -1,0 +1,3 @@
+# Summary   
+
+Petition for redhibitory action filed by Juan Baptista Richard against Joseph Rou, or Roth, for the sale of Maria and her daughter, also named Maria. Richard claims redhibitory action (i.e. "useless" or "defective good") due to deception in the sale by both Rou and Widow Pery. The suit states that Maria (*hija*) is "*baldada*," or "crippled," and that the mother shares in the same unnamed disability. At the time of the purchase, Maria (*madre*) had been in jail for helping "*negros cimarrones*," and that within a month and a few days of the sale, the mother ended up in back jail for going maroon.  
