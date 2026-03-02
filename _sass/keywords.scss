@@ -95,42 +95,8 @@ footer {
     max-width: 250px !important;
 }
 
-// Highlight footnotes in trascription/translation
-a.footnote {
-    background-color: #005442;
-    color: white !important;
-    padding: 2px 6px;
-    border-radius: 4px;
-    margin: 0 2px;
-    text-decoration: underline;
-
-    transition: all 250ms ease-out;
-
-    &:hover {
-        background-color: white;
-        color: #005442 !important;
-        outline: 1px solid #005442;
-    }
-}
-
 header {
     .nav-item svg {
         vertical-align: baseline;
     }
-}
-.item-metadata {
-  padding: 0;
-  
-  .tab-content .active {
-    height: calc(100vh - 93px);
-    overflow-y: auto;
-    overflow-x: hidden;
-    border: 0;
-  }
-}
-.image-viewer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 43px);
 }
