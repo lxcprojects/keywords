@@ -22,11 +22,28 @@ function getSnippet(item, fields, metadata) {
   return metadata
     .filter(subtitle => fields.includes(subtitle) && item[subtitle])
     .map((subtitle) => {
+      // debugger
       let label = subtitle.replaceAll('_', ' ');
       label = `${label.charAt(0).toUpperCase()}${label.slice(1)}`
       return `<b>${label}</b>: ${item[subtitle]}`;
     })
     .join(' | ');
+}
+
+/**
+ * Naive markdown "parsing"
+ * For robust markdown handling, consider bringing in an external library
+ * e.g. Marked JS
+ */
+function renderMarkdown(md = '') {
+  const escapeHtml = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  return escapeHtml(md)
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/_(.+?)_/g, '<em>$1</em>')
+    .replace(/`(.+?)`/g, '<code>$1</code>')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
+    .replace(/\n/g, '<br>');
 }
 
 function displayResult(item, fields, url, subtitles) {
@@ -40,7 +57,7 @@ function displayResult(item, fields, url, subtitles) {
     <a class="result-link" href="${link}">
       <span class="result-thumbnail">${thumb}</span>
       <div class="w-100">
-        <div class="title">${item.label}</div>
+        <div class="title">${renderMarkdown(label)}</div>
         <div class="meta text-truncate">
           ${getSnippet(item, fields, subtitles)}
         </div>
