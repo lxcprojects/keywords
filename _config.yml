@@ -52,6 +52,7 @@ search:
         fields: # the metadata fields to index
           - pid
           - label
+          - label_plain
           - lhc_filing_date
           - full_index
           - lhc_doc_origin

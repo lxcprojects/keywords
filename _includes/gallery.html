@@ -166,7 +166,7 @@
                   alt="{{ item.label }}"
                 />
                 <div class="card-body">
-                  <h3 class="card-title">{{ item.label }}</h3>
+                  <h3 class="card-title">{{ item.label | markdownify }}</h3>
 
                   {% if include.display_fields %}
                     {% assign display_fields = include.display_fields | split: "," %}
