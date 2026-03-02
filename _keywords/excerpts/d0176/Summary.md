@@ -1,0 +1,3 @@
+# Summary   
+
+Roseta Montreuill, *parda libre*, had formerly been enslaved by Roberto Montreuil, resident of the City of New Orleans, but had successfully obtained her freedom prior to October of 1793. In these *coartación* proceedings, Roseta goes back for her son Domingo, alias Lubin, *quarterón esclavo*, who is still in the service of her former enslaver. She asks the cabildo for the opportunity to acquire a fair valuation of her son, begging for the judge to also take pity because Lubin is ill. With this taken into consideration, Lubin’s liberty is assured for the price of 425 *pesos* and court costs.
