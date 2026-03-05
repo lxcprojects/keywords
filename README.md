@@ -22,21 +22,21 @@ All commands below are run on the command line (bash or zsh work).
 
 ### Wax tasks
 
-Generate pages for our data:
+First generate image derivatives:
+``` sh
+bundle exec rake wax:derivatives:simple keywords
+```
+
+Then generate pages for our data:
 ``` sh
 bundle exec rake wax:pages keywords
 bundle exec rake wax:pages keywords_descriptions
 bundle exec rake wax:pages people
 ```
 
-Generate search index:
+Finally you can generate search index:
 ``` sh
 bundle exec rake wax:search main
-```
-
-Generate image derivatives:
-``` sh
-bundle exec rake wax:derivatives:iiif keywords
 ```
 
 Running the script to generate image derivatives requires that you have [imagemagick](https://imagemagick.org/) installed on your computer.
@@ -50,6 +50,8 @@ After you have the Wax tasks run and all of the Wax files generated successfully
 ``` sh
 bundle exec jekyll serve
 ```
+
+Or you can statically build the website by running: `bundle exec jekyll build`. The generated website will be located in the `_site/` folder, which can be copied to a server or zipped for archiving.
 
 You should get output similar to the following to know that Jekyll is working. You'll then be able to navigate to http://localhost:4000/ to view your local develompent site.
 
