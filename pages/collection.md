@@ -4,6 +4,7 @@ title: The Documents
 gallery: True
 permalink: /collection/
 ---
+{% comment %} For styles specific to this page, see "_sass/collection.scss" {% endcomment %}
 
 “Kinship and Belonging: Reimagining the Place of Black Life in the Louisiana Colonial
 Archive" recasts the story of Africans and people of African descent through the
@@ -19,7 +20,7 @@ Louisiana are a deep and rich resource for Black peoples’ political practices,
 to slavery and oppression, alliances across race and status, and strategies for securing
 joy and forming community.
 
-<a class="btn" href="{{ '/keywords_descriptions' | absolute_url }}">
+<a id="browse-keywords-btn" class="btn pl-0" href="{{ '/keywords_descriptions' | absolute_url }}">
     Browse by keyword
 </a>
 
