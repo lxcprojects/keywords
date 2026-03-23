@@ -1,4 +1,5 @@
 @use "variables" as *;
+@use "collection.scss";
 
 main {
     a:not(.badge) {

@@ -1,0 +1,11 @@
+// Browse Document
+@use "variables" as *;
+
+#browse-keywords-btn {
+  color: $k4bl-primary-color;
+  font-size: 1.2rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
