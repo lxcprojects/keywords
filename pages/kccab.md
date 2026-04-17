@@ -3,7 +3,7 @@ layout: page
 title: Keywords Community Circle Advisory Board
 permalink: /kccab/
 ---
-![Keywords Black History in Louisiana Summer Workshop II Group Pic (2023)](/assets/figures/2023kccabgrouppic555kb.jpeg)  
+![Keywords Black History in Louisiana Summer Workshop II Group Pic (2023)](/assets/figures/2025%20k4bl%20collective.png)  
 
 
 The Keywords Community Circle & Advisory Board is comprised of Louisiana-based Black public historians, creators, culture-bearers, and descendants who gather with the team twice a year for the K4BL-hosted spring meeting and summer Black History in Louisiana Workshop. The Keywords Community Circle and Advisory Board emerged as a space to bring Black public historians into connection and conversation with the project. Members are expected to use, publicize, critique, and engage the project in their own work. The Community, Ethics, and Accountability team serves as the primary bridge between the Circle and the core project team. Two gatherings also facilitate connection and engagement: the spring meeting and the summer workshop. At the time of this grant application, K4BL has completed two such gatherings (one summer, one spring). By providing an opportunity for team members and Black Louisiana historical community to engage the documents directly, we boost discoverability and dissemination of the project, continue to share editorial and design decisions, receive direct feedback from the target audience, and raise general awareness about the history under study and nature of the archive. 
