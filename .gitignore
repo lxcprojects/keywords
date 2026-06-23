@@ -11,3 +11,8 @@ search/
 _keywords/*.md
 _keywords_descriptions/*.md
 _people/*.md
+
+.tool-versions
+scripts/
+.vscode/
+.kiro/
