@@ -56,9 +56,11 @@ Generate the list of nav links to all of our Keywords
   </nav>
 
   <section class="col">
-    <h1>Keywords</h1>
-
-    <h2 class="d-none d-lg-block">{{ page.label }}</h2>
+    {% if page.label %}
+      <h2 class="d-none d-lg-block">{{ page.label }}</h2>
+    {% else %}
+      <h1>Keywords</h1>
+    {% endif %}
 
     <nav id="side-nav-sm" class="d-block d-lg-none">
       <button
@@ -79,14 +81,33 @@ Generate the list of nav links to all of our Keywords
       </div>
     </nav>
 
-    {%- if content -%}
-      <div class="">
-        {{content}}
-      </div>
-    {%- endif -%}
+    {% if page["Author(s)"] %}
+    <div class="mt-4">
+      <span>Author(s): </span> {{ page["Author(s)"] }}
+    </div>
+    {% endif %}
+    {% if page["Editor(s)"] %}
+    <div class="mb-4">
+      <span>Editor(s): </span> {{ page["Editor(s)"] }}
+    </div>
+    {% endif %}
 
-    {% if page.Description %}
-      {{ page.Description | markdownify }}
+    {% assign excerpt = site.documents | where: 'collection', page.collection | where_exp: 'doc', "doc.path contains '/excerpts/'" | where: 'basename', page.pid | first %}
+    {% if excerpt %}
+    <div>
+      {% capture excerpt_file %}excerpts/{{ page.pid }}.md{% endcapture %}
+      {% capture data %}{% include_relative {{ excerpt_file }} %}{% endcapture %}
+      {{ data | markdownify }}
+    </div>
+    <hr />
+    {% else %}
+      {% if page.Description %}
+        {{ page.Description | markdownify }}
+      {% endif %}
+      {% if page.References %}
+        <h3>References</h3>
+        {{ page.References | markdownify }}
+      {% endif %}
     {% endif %}
 
     {% if page.Keyword %}
@@ -105,6 +126,9 @@ Generate the list of nav links to all of our Keywords
   ul {
       list-style: none;
       max-width: 100%;
+  }
+  #references + ul {
+    list-style: initial;
   }
   #side-nav-sm button {
     align-items: center;
