@@ -75,9 +75,19 @@ jobs:
           bundle exec rake wax:pages people
           bundle exec rake wax:search main
 
+      - name: Inject analytics config
+        if: ${{ vars.UMAMI_WEBSITE_ID != '' }}
+        run: |
+          echo "umami_website_id: \"${{ vars.UMAMI_WEBSITE_ID }}\"" > _config_analytics.yml
+
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        run: |
+          if [ -f _config_analytics.yml ]; then
+            bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}" --config _config.yml,_config_analytics.yml
+          else
+            bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+          fi
         env:
           JEKYLL_ENV: production
 

@@ -139,3 +139,10 @@ Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapi
 ```
 
 This example will add the following to the list of Keywords Alumni: ![Sample team member entry](/assets/figures/example-team-entry.png)
+
+## Analytics
+
+We've added integration with the open source analytics platform [Umami](https://umami.is/). Despite our website's minimal compute context, it is best to use the Umami hosted script in order to keep up to date with any Umami changes without need for manual intervention, especially since this script is not strictly necessary for website functionality.
+
+The ID needed for Umami analytics tracking is only added to the website when it is built and published to GitHub Pages - it will not be included during deployment builds, such as when running Jekyll locally during development. If we need to update the Umami website ID, it can be found in the GitHub repository `Settings > Secrets and variables > Actions > Repository variables`
+

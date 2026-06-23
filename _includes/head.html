@@ -28,5 +28,10 @@
   <script type='text/javascript' src='{{ "/assets/js/jquery/jquery-3.7.1.min.js" | absolute_url }}'></script>
   {% if page.gallery %}<script type='text/javascript' defer src='{{ "/assets/js/facets.js" | absolute_url }}'></script>{% endif %}
   <script type='text/javascript' defer src='{{ "/assets/js/bootstrap/4.6.2/bootstrap.min.js" | absolute_url }}'></script>
+  {% if jekyll.environment == "production" and site.umami_website_id %}
+  <!-- Umami analytics -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="{{ site.umami_website_id }}"></script>
+  {% endif %}
+
   <noscript><p>Please enable JavaScript in your browser.</p></noscript>
 </head>
