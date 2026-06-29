@@ -25,6 +25,9 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
+env:
+  IMAGEMAGICK_VERSION: '7.1.2-26'
+
 jobs:
   # Build job
   build:
@@ -44,9 +47,30 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
-      # Installs ImageMagick, caches download. See https://github.com/mfinelli/setup-imagemagick
+      - name: Cache ImageMagick binary
+        id: cache-imagemagick
+        uses: actions/cache@v4
+        with:
+          path: /usr/local/bin/magick
+          key: ${{ runner.os }}-imagemagick-${{ env.IMAGEMAGICK_VERSION }}
+
       - name: Setup ImageMagick
-        uses: mfinelli/setup-imagemagick@v6.0.0
+        if: steps.cache-imagemagick.outputs.cache-hit != 'true'
+        run: |
+          curl -fsSL -o magick.appimage "https://github.com/ImageMagick/ImageMagick/releases/download/${IMAGEMAGICK_VERSION}/ImageMagick-${IMAGEMAGICK_VERSION}-gcc-x86_64.AppImage"
+          chmod +x magick.appimage
+          sudo mv magick.appimage /usr/local/bin/magick
+
+      - name: Configure ImageMagick security policy
+        run: |
+          POLICY_DIR="$HOME/.config/ImageMagick"
+          mkdir -p "$POLICY_DIR"
+          cp .github/imagemagick-policy.xml "$POLICY_DIR/policy.xml"
+
+      - name: Verify ImageMagick
+        run: |
+          magick --version
+          magick -list policy
 
       # Cache image derivs, because they take a long time to generate
       # Single images and images in folders are matched
