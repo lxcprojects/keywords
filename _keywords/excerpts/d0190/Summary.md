@@ -1,0 +1,2 @@
+# Summary
+Upon his departure for the Illinois, enslaver Baldit sold an enslaved man of the _Poulard_ nation named Amadit to _sieur_ Pierre Delille Dupard, shoemaker in the city. Baldit claimed that Amadit was not healthy enough to make the journey.
