@@ -1,6 +1,6 @@
 ---
 name: Kaillee Coleman
-jobtitle: Associate Editor, Spanish Language Team
+jobtitle: Associate Editor and Team Lead, Spanish Language Team
 image: /assets/figures/headshots/kaillee.jpg
 ---
 is a PhD candidate in Latin American Studies and Art History at Tulane University, where her research focuses on contemporary Caribbean art, history, and cultural production – with special emphasis on the Black Atlantic and Diaspora Studies. Her dissertation project, *When I Am Not Here, Estoy Allá: Visualizing Expansive Space-Time in Caribbean Diasporic Memory*, centers questions of archival assemblage, temporal sovereignty, and emergent geographies. Kaillee holds an MA in Latin American Studies and a dual BA degree in Art History and Interdisciplinary Art.
