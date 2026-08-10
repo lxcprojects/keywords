@@ -75,17 +75,17 @@ jobs:
       # Cache image derivs, because they take a long time to generate
       # Single images and images in folders are matched
       # jp*g is used to glob match jpg and jpeg
-      - name: 'Cache image derivatives'
-        id: cache-image-derivs
-        uses: actions/cache@v4
-        with:
-          path: img/
-          key: ${{ runner.os }}-image-derivatives-${{ hashFiles('_data/raw_images/keywords/*.jp*g', '_data/raw_images/keywords/**/*.jp*g') }}
+      # - name: 'Cache image derivatives'
+      #   id: cache-image-derivs
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: img/
+      #     key: ${{ runner.os }}-image-derivatives-${{ hashFiles('_data/raw_images/keywords/*.jp*g', '_data/raw_images/keywords/**/*.jp*g') }}
       
       # Generate image derivatives if cache is not found
       - name: 'Generate simple image derivatives'
         id: gen-img-derivs
-        if: steps.cache-image-derivs.outputs.cache.hit != 'true'
+        # if: steps.cache-image-derivs.outputs.cache.hit != 'true'
         shell: bash
         run: bundle exec rake wax:derivatives:simple keywords
 
