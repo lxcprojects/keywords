@@ -1,6 +1,6 @@
 ---
 name: Raven McCoy
-jobtitle: Transcriber and Translator, Spanish Language Team
+jobtitle: Assistant Editor, Spanish Language Team
 image: /assets/figures/headshots/raven.jpg
 ---
 is an alumn of Johns Hopkins University where they received a Bachelor of Arts in Psychology with concentrations in Visual Arts and Spanish. They are part of the Keywords for Black Louisiana Spanish Language Team serving as a Transcriber and Translator.
