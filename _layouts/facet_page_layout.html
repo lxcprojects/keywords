@@ -81,6 +81,13 @@ Generate the list of nav links to all of our Keywords
       </div>
     </nav>
 
+    {% comment %} Will show "pages/keywords.md" if no keyword has been selected {% endcomment %}
+    {% unless page["Keywords"] %}
+      <div class="mt-4">
+        {{ content }}
+      </div>
+    {% endunless %}
+
     {% if page["Author(s)"] %}
     <div class="mt-4">
       <span>Author(s): </span> {{ page["Author(s)"] }}
