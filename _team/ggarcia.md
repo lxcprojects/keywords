@@ -1,7 +1,9 @@
 ---
 name: Guadalupe García
-jobtitle: Managing Editor
+jobtitle: Managing Editor and Spanish Editor
 image: /assets/figures/headshots/drgarcia.jpg
+director: true
+order: 2
 ---
 specializes in the history of Cuba and the Caribbean with research interests in cities, colonialism, and urban geographies. Dr. Garcia’s work explores the relationship between colonialism and the built ecologies of the Gulf South and Spanish Caribbean. Her first book, *Beyond the Walled City: Colonial Exclusion in Havana* (University of California Press, 2016) is based on archival research in Cuban, US, and Spanish collections and narrates a history of Havana that begins with the city’s founding in the early sixteenth century and extends through the end of the U.S. military occupation in 1902. García’s current project extends from questions raised during this groundbreaking foray into colonial, Caribbean urban history; she is focused on rearticulating the geography of late eighteenth and early nineteenth-century Havana through the gendered lens of Black freedom and enslavement. 
 
