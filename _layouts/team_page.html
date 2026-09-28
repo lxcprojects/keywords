@@ -11,6 +11,20 @@ layout: page
 
   {% assign people = site.team | sort: "order" %}
 
+<!-- Directors -->
+{% assign directors = people | where_exp: "person", "person.director" %}
+{% assign sorted_directors = directors | sort: "order" %}
+{% assign num_directors = sorted_directors | size %}
+
+{% if num_directors > 0 %}
+<div class="my-5">
+  <h2>Directors</h2>
+  {% for director in sorted_directors %}
+    {% include team_member.html person=director %}
+  {% endfor %}
+</div>
+{% endif %}
+
   <!-- Current team -->
   {% assign current_team = people | where_exp: "person", "person.alum != true and person.founder != true" %}
   <div class="my-5">
