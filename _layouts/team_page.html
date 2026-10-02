@@ -25,18 +25,6 @@ layout: page
 </div>
 {% endif %}
 
-<!-- Founding members -->
-  {% assign founders = people | where_exp: "person", "person.founder" %}
-  {% assign num_founders = founders | size %}
-  {% if num_founders > 0 %}
-  <div class="my-5">
-    <h2>Founding Keywords</h2>
-    {% for founder in founders %}
-      {% include team_member.html person=founder %}
-    {% endfor %}
-  </div>
-  {% endif %}
-
   <!-- Current team -->
   {% assign current_team = people | where_exp: "person", "person.alum != true and person.founder != true" %}
   <div class="my-5">
@@ -54,6 +42,18 @@ layout: page
     <h2>Keywords Alumni</h2>
     {% for alum in alums %}
       {% include team_member.html person=alum %}
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <!-- Founding members -->
+  {% assign founders = people | where_exp: "person", "person.founder" %}
+  {% assign num_founders = founders | size %}
+  {% if num_founders > 0 %}
+  <div class="my-5">
+    <h2>Founding Keywords</h2>
+    {% for founder in founders %}
+      {% include team_member.html person=founder %}
     {% endfor %}
   </div>
   {% endif %}
