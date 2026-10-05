@@ -26,7 +26,7 @@ layout: page
 {% endif %}
 
   <!-- Current team -->
-  {% assign current_team = people | where_exp: "person", "person.alum != true and person.founder != true" %}
+  {% assign current_team = people | where_exp: "person", "person.alum != true and person.founder != true and person.director != true" %}
   <div class="my-5">
     <h2>Current Team</h2>
     {% for person in current_team %}
