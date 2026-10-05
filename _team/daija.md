@@ -2,6 +2,7 @@
 name: Daija Yisrael
 jobtitle: Associate Editor, French Language Team
 image: /assets/figures/headshots/daija.jpg
+alum: true
 ---
 is a globally focused social scientist committed to leveraging historical narratives to navigate public policy and shape equitable futures. She recently earned a Master of International Development Policy at Georgetown University’s McCourt School of Public Policy. Her research interests center on economic empowerment through education, the creative industries, and the ethical provision of public goods. She is particularly focused on how digitization is shaping each of these areas.
 
