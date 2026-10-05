@@ -2,6 +2,7 @@
 name: Nyla Williams
 jobtitle: Digital Editorial Assistant
 image: /assets/figures/headshots/nyla.jpg
+alum: true
 ---
 is a scholar, researcher, and rising senior at Xavier University of Louisiana. Majoring in History with a minor in Art Management, Nyla has a deep passion for preserving and interpreting Black American historical narratives. She is a Student Research Assistant at the Xavier University Archives and Special Collections, where she processes, preserves, and catalogs collections. Nyla also re-established and is the current president of the Xavier University History Club. Under her leadership the club has become partners with local archives and museums to introduce students to careers in public history.
 
