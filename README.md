@@ -85,7 +85,7 @@ Development:
 rm -rf img/
 
 # Generate images for website
-bundle exec rake wax:derivatives:iiif keywords
+bundle exec rake wax:derivatives:simple keywords
 
 # --------
 # If the CSV was updated, remove the old pages
@@ -99,6 +99,9 @@ bundle exec rake wax:pages people
 # --------
 # Update search index
 bundle exec rake wax:search main
+
+# Start local jekyll server
+bundle exec jekyll serve
 ```
 
 ---
