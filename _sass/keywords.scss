@@ -100,3 +100,13 @@ header {
         vertical-align: baseline;
     }
 }
+
+#facet-back-btn {
+    position: relative;
+    display: inline-block;
+    background-color: rgba(0,0,0,0);
+
+    svg {
+        fill: $light-text;
+    }
+}
