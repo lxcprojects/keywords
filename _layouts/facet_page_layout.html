@@ -57,7 +57,10 @@ Generate the list of nav links to all of our Keywords
 
   <section class="col">
     {% if page.label %}
-      <div class="d-flex align-items-center mb-2">
+      <h1 class="d-block d-lg-none">
+        <a href="/keywords_descriptions/">Keywords</a>
+      </h1>
+      <div class="d-none d-lg-flex align-items-center mb-2">
         <a id="facet-back-btn" class="btn btn-default" title="Back"
             href="/keywords_descriptions/">
           <svg xmlns="http://www.w3.org/2000/svg" 
@@ -70,7 +73,7 @@ Generate the list of nav links to all of our Keywords
         <h1 class="d-none d-lg-inline-block mb-0">{{ page.label }}</h1>
       </div>
     {% else %}
-      <h1>Keywords</h1>
+      <h1 class="d-none d-lg-block">Keywords</h1>
     {% endif %}
 
     <nav id="side-nav-sm" class="d-block d-lg-none">
@@ -83,7 +86,12 @@ Generate the list of nav links to all of our Keywords
           aria-label="toggle keywords list"
       >
         <span class="navbar-toggler-icon">&#9776;</span>
-        <h2>{{ page.label }}</h2>
+
+        {% if page.label %}
+          <h2>{{ page.label }}</h2>
+        {% else %}
+          <h1>Keywords</h1>
+        {% endif %}
       </button>
       <div id="side-nav-sm-collapse" class="collapse navbar-collapse border-left border-right">
         <ul class="list-group list-group-flush px-4 py-2">
