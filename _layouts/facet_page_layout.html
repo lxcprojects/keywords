@@ -57,9 +57,23 @@ Generate the list of nav links to all of our Keywords
 
   <section class="col">
     {% if page.label %}
-      <h2 class="d-none d-lg-block">{{ page.label }}</h2>
+      <h1 class="d-block d-lg-none">
+        <a href="/keywords_descriptions/">Keywords</a>
+      </h1>
+      <div class="d-none d-lg-flex align-items-center mb-2">
+        <a id="facet-back-btn" class="btn btn-default" title="Back"
+            href="/keywords_descriptions/">
+          <svg xmlns="http://www.w3.org/2000/svg" 
+              width="32" height="32" fill="currentColor" 
+              class="bi bi-arrow-left" viewBox="0 0 16 16"
+              aria-hidden="true" focusable="false">
+            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"></path>
+          </svg>
+        </a>
+        <h1 class="d-none d-lg-inline-block mb-0">{{ page.label }}</h1>
+      </div>
     {% else %}
-      <h1>Keywords</h1>
+      <h1 class="d-none d-lg-block">Keywords</h1>
     {% endif %}
 
     <nav id="side-nav-sm" class="d-block d-lg-none">
@@ -72,7 +86,12 @@ Generate the list of nav links to all of our Keywords
           aria-label="toggle keywords list"
       >
         <span class="navbar-toggler-icon">&#9776;</span>
-        <h2>{{ page.label }}</h2>
+
+        {% if page.label %}
+          <h2>{{ page.label }}</h2>
+        {% else %}
+          <h1>Keywords</h1>
+        {% endif %}
       </button>
       <div id="side-nav-sm-collapse" class="collapse navbar-collapse border-left border-right">
         <ul class="list-group list-group-flush px-4 py-2">
