@@ -6,20 +6,20 @@ permalink: /bibliography/
 
 The “Selected Bibliography” page contains a selection of recommended readings, visual media, and other resources that the Keywords for Black Louisiana team has used to conduct their research. It is our hope that these resources will be helpful to those interested in learning more about themes and subjects encountered in the documents. The readings are organized by subject groups that correspond with [current keywords](/keywords_descriptions/). 
 
-- (Health and Wellness)[#health-and-wellness]
-- (Social Worlds of Death)[#social-worlds-of-death]
-- (Degrees of Freedom)[#degrees-of-freedom]
-- (Navigating and Resisting Enslavement)[#navigating-and-resisting-enslavement]
-- (Criminality and Policing)[#criminality-and-policing]
-- (Geography)[#geography]
-- (Racial Capitalism)[#racial-capitalism]
-- (Social Development and Kinship)[#social-development-and-kinship]
-- (Race)[#race]
-- (Native Identit(ies) and Nationhood)[#native-identities-and-nationhood]
-- (Work and Labor)[#work-and-labor]
-- (Warfare)[#warfare]
-- (Law and Legality)[#law-and-legality]
-- (Culture)[#culture]
+- [Health and Wellness](#health-and-wellness)
+- [Social Worlds of Death](#social-worlds-of-death)
+- [Degrees of Freedom](#degrees-of-freedom)
+- [Navigating and Resisting Enslavement](#navigating-and-resisting-enslavement)
+- [Criminality and Policing][#criminality-and-policing]
+- [Geography](#geography)
+- [Racial Capitalism](#racial-capitalism)
+- [Social Development and Kinship][#social-development-and-kinship]
+- [Race](#race)
+- [Native Identit(ies) and Nationhood][#native-identities-and-nationhood]
+- [Work and Labor](#work-and-labor)
+- [Warfare](#warfare)
+- [Law and Legality](#law-and-legality)
+- [Culture](#culture)
 
 
 # Texts We Study  
