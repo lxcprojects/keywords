@@ -31,8 +31,10 @@ Explore a sample of the documents below.
     collection='keywords'
     facet_by='language'
     num_column=4
-    sortBy='filing_date'
+    sortByDefault='lhc_filing_date'
+    sortBy='publication_date'
+    sortByLabel='K4BL Publication Date (Newest first)'
     separator=','
-    display_fields="lhc_source,lhc_doc_origin,lhc_filing_date,keywords"
+    display_fields="lhc_source,lhc_doc_origin,lhc_filing_date,publication_date,keywords"
 %}
 

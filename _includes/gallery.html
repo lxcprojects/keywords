@@ -24,10 +24,10 @@
   {% assign collection = site[include.collection] %}
 {% endif %}
 
-{% if include.sortBy and include.sortOrder == "reverse" %}
-  {% assign collection = collection | sort: include.sortBy | reverse %}
-{% elsif include.sortBy and include.sortOrder != "reverse" %}
-  {% assign collection = collection | sort: include.sortBy %}
+{% if include.sortByDefault and include.sortOrder == "reverse" %}
+  {% assign collection = collection | sort: include.sortByDefault | reverse %}
+{% elsif include.sortByDefault and include.sortOrder != "reverse" %}
+  {% assign collection = collection | sort: include.sortByDefault %}
 {% endif %}
 
 {% comment %}- END SUBSET PARSING -{% endcomment%}
@@ -128,7 +128,40 @@
           </div>
         </div>
       </fieldset>
-    {% endfor %}  
+    {% endfor %}
+
+    <fieldset id="sort-controls" class="card m-1 facet-card">
+      <div class="facet-header card-header p-0">
+        <a class="facet-bn"
+            data-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            aria-controls="sort-collapse"
+            href="#sort-collapse"
+        >
+          <legend class="px-4 py-2">
+            Sort By
+            <span class="facets-chevron facets-chevron-bottom float-right ml-2" aria-hidden="true"></span>
+          </legend>
+        </a>
+      </div>
+      <div class="collapse" id="sort-collapse">
+        <div class="card-body">
+          <div class="facet-item">
+            <label>
+              <input id="{{ include.sortBy | slugify }}-checkbox"
+                  class=""
+                  type="checkbox"
+                  name="{{ include.sortByLabel }}"
+                  value="{{ include.sortBy }}"
+              />
+              <span class="mx-2">{{ include.sortByLabel }}</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
   </form>
 {% else %}
 {% endif %}
@@ -164,8 +197,14 @@
                 {% assign newClasses = newClasses | concat: facetArray %}           
             {% endfor %}
           {% endif %}
+          {% if include.sortBy %}
+            {% capture sortVal %}{{ item[include.sortBy] | slugify }}{% endcapture %}
+          {% endif %}
 
-          <div class="gallery-item-facets {{ newClasses | join: ' ' }} col-xl-{{min_column_width}} p-1">
+          <div
+              class="gallery-item-facets {{ newClasses | join: ' ' }} col-xl-{{min_column_width}} p-1"
+              data-sort="{{ sortVal }}"
+          >
             <a href="{{ item.url | relative_url }}">
               <div class="card thumbnail-card h-100">
                 <img

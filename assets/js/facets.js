@@ -2,6 +2,8 @@
          
 
 $(document).ready(function () {          
+    globalThis.listOfElements = $('.gallery-item-facets');
+
     $(".facet-bn").click(function (event) {
         $(this)
             .parent()
@@ -42,7 +44,8 @@ for (let i = 0; i < numberFacets; i++) {
   facets[setIds[i]] = new Array();
 }
 
-$("#facets :checkbox").change(function () {
+// Handle facet inputs
+$("#facets fieldset:not(#sort-controls) :checkbox").change(function () {
   // Find the checkboxes parent fieldset id by taking its class name and adding "-set" to the end
   const pinClass = `${this.className}-set`;
 
@@ -57,6 +60,28 @@ $("#facets :checkbox").change(function () {
   // After updating the facets object, rerun refreshGallery()
   refreshGallery();
 });
+
+// Handle sorting inputs
+$("#facets fieldset#sort-controls :checkbox").change(function () {
+  if (this.checked) {
+    // If one is selected, deselect others and sort
+    applySort(
+      $('.gallery-item-facets').sort((a, b) => {
+        return b.dataset.sort.localeCompare(a.dataset.sort);
+      })
+    );
+  } else {
+    // Manual unselection: revert to default
+    applySort(globalThis.listOfElements);
+  }
+});
+
+function applySort(listOfElements) {
+  listOfElements
+    .hide('slow')
+    .appendTo('.wax-gallery .row')
+    .show('slow');
+}
 
 /**
  * Shows / hides items based on active checkboxes
