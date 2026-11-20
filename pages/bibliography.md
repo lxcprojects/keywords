@@ -82,6 +82,8 @@ The “Selected Bibliography” page contains a selection of recommended reading
 
 - Smallwood, Stephanie. *Saltwater Slavery: A Middle Passage from Africa to the American Diaspora*. Cambridge: Harvard University Press, 2007.
 
+ - St. Jean, Wendy. "Trading Paths: Mapping Chickasaw History in the Eighteenth Century." *American Indian Quarterly* 27, no. 3/4 (Summer–Autumn 2003): 758–80. https://www.jstor.org/stable/4138971.
+
 ### **Racial Capitalism**
 
 *contract labor, debt, displacement,  estate, exchange, fungibility, hiring out, income, inheritance, la traverse, lease, maritime, Middle Passage, payment, rental, sale, slave auction, slave inventory, trade, valuation*
